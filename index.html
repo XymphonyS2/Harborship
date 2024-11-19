@@ -1,11 +1,228 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Harborship</title>
-  </head>
-  <body>
-    <h1>halo pis</h1>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Pesan tiket kapal ferry mudah, aman dan cepat. Ferizy Naik Ferry, Easy!">
+  <meta name="author" content="Nutech Integrasi by Telkom Indonesia">
+  <meta name="theme-color" content="#0a67b2">
+  <meta name="msapplication-navbutton-color" content="#0a67b2">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#0a67b2">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Ferizy Naik Ferry, Easy!">
+  <link rel="apple-touch-icon" href="https://www.ferizy.com/icon-144.png">
+  <meta name="google-site-verification" content="HlJArL1bL5D6TMNnyFfWceHK_Hi2bPlLRqR7dkvwo2s" />
+  <link rel="shortcut icon" type="image/png" href="https://www.ferizy.com/assets/images/favicon.png">
+  <!-- Bootstrap core CSS -->
+  <link href="https://www.ferizy.com/assets/vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://www.ferizy.com/assets/vendor/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet">
+
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <!-- <link href="https://www.ferizy.com/assets/vendor/bootstrap/docs/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet"> -->
+
+  <!-- Select CSS -->
+  <link href="https://www.ferizy.com/assets/vendor/select2/css/select2.css" rel="stylesheet" />
+
+  <!--Datetime picker Jquery UI CSS-->
+  <link href="https://www.ferizy.com/assets/vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+  <!-- Magnific popup CSS -->
+  <link href="https://www.ferizy.com/assets/vendor/jquery-ui/jquery-ui.css" rel="stylesheet">
+
+  <!--Fontawesome CSS-->
+  <link rel="stylesheet" href="https://www.ferizy.com/assets/vendor/fontawesome-free-5.13.1-web/css/all.css">
+
+
+  <!--Font Flaticon CSS-->
+  <link href="https://www.ferizy.com/assets/vendor/font-flaticon/font/flaticon.css?version=3.5.3" rel="stylesheet">
+  <link
+    href="https://www.ferizy.com/assets/vendor/font-flaticon/uicons-regular-rounded/css/uicons-regular-rounded.css?version=3.5.3"
+    rel="stylesheet">
+  <link
+    href="https://www.ferizy.com/assets/vendor/font-flaticon/uicons-solid-rounded/css/uicons-solid-rounded.css?version=3.5.3"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css"
+    integrity="sha512-Cv93isQdFwaKBV+Z4X8kaVBYWHST58Xb/jVOcV9aRsGSArZsgAnFIhMpDoMDcFNoUtday1hdjn0nGp3+KZyyFw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!--Slider CSS-->
+  <link rel="stylesheet" type="text/css" href="https://www.ferizy.com/assets/vendor/slick-1.8.1/slick/slick.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://www.ferizy.com/assets/vendor/slick-1.8.1/slick/slick-theme.css" />
+
+  <!-- Custom styles for this template -->
+  <link href="https://www.ferizy.com/assets/css/carousel.css" rel="stylesheet">
+  <link href="https://www.ferizy.com/assets/css/port.css?version=3.5.3" rel="stylesheet">
+  <link href="https://www.ferizy.com/assets/css/port2.css?version=3.5.3" rel="stylesheet">
+  <link href="https://www.ferizy.com/assets/css/animate.min.css" rel="stylesheet">
+  <link href="https://www.ferizy.com/assets/css/loaders.css" rel="stylesheet">
+  <link href="https://www.ferizy.com/assets/css/checkbox.css" rel="stylesheet">
+  <link href="https://www.ferizy.com/assets/css/ribbon.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://www.ferizy.com/assets/vendor/icheck/icheck-bootstrap.css">
+
+  <!-- Google Fonts Web -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+  <!--DateTime Picker-->
+  <link href="https://www.ferizy.com/assets/vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.css"
+    rel="stylesheet">
+
+  <link rel="manifest" href="https://www.ferizy.com/manifest.json">
+  <input id="uri_segment" type="hidden" value="" />
+
+  <script src="https://www.ferizy.com/assets/js/jquery.min.js"></script>
+
+  <!-- Sweetalert  -->
+  <script src="https://www.ferizy.com/assets/vendor/sweetalert/sweetalert.js"></script>
+  <script src="https://www.ferizy.com/assets/vendor/sweetalert/sweetalert2.all.min.js"></script>
+  <script>
+    var is_login = "false",
+      notif_error_nik = "",
+      autocompleteCity = [],
+      method_login = "modal",
+      referer = null,
+      passpharse = "60b858fe8ae649057bb997c4";
+
+    // delete item local storage when is_login false
+    if (is_login == "false") {
+      localStorage.removeItem('order_data');
+      localStorage.removeItem('reason_data');
+      localStorage.removeItem('verification_data');
+    }
+    const GA_ID = 'UA-145471306-1';
+    var BASE_URL = 'https://www.ferizy.com/';
+
+    // RMS Configuration
+    const RMS_ENABLE = '1'
+    const RMS_HEADER_ACCESS_LOCATION = 'AKSES LOKASI ANDA TIDAK AKTIF'
+    const RMS_HEADER_FAILED_BOOKING = 'PEMESANAN GAGAL'
+    const RMS_MESSAGE_ACCESS_LOCATION = 'Untuk pengalaman yang lebih baik mohon aktifkan akses lokasi perangkat Anda.'
+    const RMS_MESSAGE_FAILED_BOOKING = 'Pemesanan tiket hanya dapat dilakukan #radius sebelum Pelabuhan #pelabuhan.'
+    let geolocationPosition;
+
+    $(function () {
+      var uri = ["info", "login", "register", "check_order", "myaccount"]
+      $.ajax({
+        url: BASE_URL + "info/check_member",
+        method: "post",
+        dataType: "json",
+        success: async function (data) {
+          let uri_segment = $("#uri_segment").val();
+          if (!uri.includes(uri_segment)) {
+            if (data.code == 1 && data.data.updated_profile == 'f') {
+              SwalFerizy.fire({
+                title: "Maaf, terjadi kesalahan!",
+                text: "GAGAL. MOHON LENGKAPI DATA DIRI ANDA TERLEBIH DAHULU",
+                icon: "info",
+                confirmButtonText: "OK",
+                allowEscapeKey: false,
+                allowOutsideClick: false,
+              }).then(() => {
+                redirect(`${BASE_URL}myaccount`);
+              });
+            } else if (data.code == 151) {
+              SwalFerizy.fire({
+                title: "",
+                text: data.message,
+                icon: "error",
+                confirmButtonText: "Ok",
+                allowEscapeKey: false,
+                allowOutsideClick: false,
+              }).then((value) => {
+                if (value.isConfirmed) {
+                  redirect(`${BASE_URL}logout`);
+                }
+              });
+            } else if (data.code == 174 || data.code == 175) {
+              SwalFerizy.fire({
+                title: "Error",
+                text: data.message,
+                icon: "error",
+                confirmButtonText: "Ok",
+                allowEscapeKey: false,
+                allowOutsideClick: false,
+              }).then(() => {
+                redirect(`${BASE_URL}login`)
+              });
+            } else {
+              if (RMS_ENABLE == '1') {
+                let currentPage = window.location.href
+                let isHomePage = false;
+                if (BASE_URL == currentPage || BASE_URL + '#' == currentPage) {
+                  isHomePage = true
+                }
+                if (isHomePage) {
+                  if (is_login == 'true') {
+                    checkValidateRadius1 = true;
+                    isHitRmsApi = true;
+                    validateRadius1();
+                  } else {
+                    checkValidateRadius1 = true;
+                    await checkGeolocationPermission();
+                  }
+                }
+              } else {
+                $("#popup-info").modal("show");
+              }
+            }
+          }
+        },
+        error: function (res) {
+          console.log("Silahkan Hubungi Administrator");
+        },
+      });
+    })
+  </script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145471306-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-145471306-1');
+  </script>
+  <!-- <script src="https://browser.sentry-cdn.com/6.7.0/bundle.tracing.min.js" integrity="sha384-K7OJwDwztIMC6ZY17JBkWNnmTftP9GBiV2Nv0I6RGdIsGeDbm6i1gB9L7ZtMIWrZ" crossorigin="anonymous"></script>
+<script>
+  Sentry.init({
+    dsn: "https://eb20626b0a424fe0a99ee0979fb13948@o355924.ingest.sentry.io/5803515",
+    maxBreadcrumbs: 50,
+    environment: "production",
+    debug: false,
+    integrations: [new Sentry.Integrations.BrowserTracing()],
+    tracesSampleRate: 1.0,
+    release: "ferizy@3.5.3"
+  });
+</script> -->
+  <title>Harborship</title>
+  <style>
+    @media (max-width: 767px) {
+      .my-content-container {
+        margin-bottom: 50px !important;
+        padding-bottom: 50px;
+      }
+    }
+
+    @media (max-width: 1360px) {
+      .corner-ribbon {
+        visibility: hidden;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1>halo pis</h1>
+</body>
+
 </html>
 <!-- halo pis -->
