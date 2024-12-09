@@ -1,0 +1,496 @@
+/* popup banner slider*/
+#lihat-nanti:hover{
+	background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0 0);
+}
+.carousel-control:focus, .carousel-control:hover{
+	opacity: .9;
+}
+.carousel-control.left, .carousel-control.right {
+	background-image : none;
+	filter : none;
+}
+.carousel{
+	border-radius: 8px;
+	overflow: hidden;
+}
+.carousel-inner > .item{
+	transition: transform .2s ease-in-out;
+}
+.main-slider-img{
+	max-width: 100%;
+	width: 100%;
+	border-radius:10px;
+	display:block;
+	margin:auto;
+}
+.right{
+	width: 15%;
+}
+@media screen and (min-width: 767px) {
+	.carousel-control .glyphicon-chevron-right, .carousel-control .icon-next {
+	margin-right: -34px !important;
+	font-size: 30pt;
+	}
+
+	.carousel-control .glyphicon-chevron-left, .carousel-control .icon-prev {
+	margin-left: -43px !important;
+	font-size: 30pt;
+	}
+}
+@media (min-width: 377px) and (max-width: 530px) {
+	.carousel-control .glyphicon-chevron-right, .carousel-control .icon-next {
+	margin-right: -25px !important;
+	font-size: 20pt;
+	}
+	.carousel-control .glyphicon-chevron-left, .carousel-control .icon-prev {
+	margin-left: -24px !important;
+	font-size: 20pt;
+	}
+	.span-popup {
+		font-size: 9pt;
+	}
+	.span-close {
+		padding: 0 15px 0 15px !important;
+	}
+	.btn-url-popup{
+		margin-right: 0 !important;
+	}
+}
+@media (max-width: 376px) {
+	.carousel-control .glyphicon-chevron-right, .carousel-control .icon-next {
+		margin-right: -23px !important;
+		font-size: 20pt;
+	}
+	.carousel-control .glyphicon-chevron-left, .carousel-control .icon-prev {
+		margin-left: -23px !important;
+		font-size: 20pt;
+	}
+	.span-popup {
+		font-size: 8.5pt;
+	}
+	.span-close {
+		padding: 0 15px 0 15px !important;
+	}
+	.btn-url-popup{
+		margin-right: 0 !important;
+	}
+}
+/* end popup banner slider*/
+
+/* step reservation */
+@media (max-width: 767px) and (max-width: 480px) {
+    #step-reservasi{
+        background-color: #fff;
+        color: black;
+    }
+
+    .nav > li {
+        text-align: center;
+    }
+
+    .line{
+        width: 270px;
+        height: 0;
+        border-top: 1px solid #c6c9da;
+        display: inline-block;
+        margin-left: 81px;
+        margin-top: 27px;
+        margin-right: -127px;
+        position: absolute;
+    }
+
+    .nav-step {
+        margin-top: 15px;
+        line-height: 22px;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        text-align: center;
+        z-index: 1;
+    }
+
+    .circle-step{
+        border: 1px solid #36445a;
+        background-color: #fff;
+        color: black;
+        font-weight: bold;
+    }
+
+    .circle-step-done{
+        background-color: #0a67b2;
+        color: #fff;
+		border: 1px solid #0a67b2;
+    }
+
+    #span-step{
+        color: black;
+        display: block;
+        width: 90px;
+        font-size: 8pt;
+        margin-bottom: 2px;
+    }
+
+    .steper{
+        position: sticky;
+        z-index: 1;
+        top: 0;
+        border-bottom: 1px solid #c6c9da;
+        overflow: hidden;
+        display: block !important;
+    }
+
+    .preview-schedule{
+        position: static !important;
+    }
+
+    .ul-step{
+        list-style-type: none;
+    }
+
+    ol, ul {
+        margin-top: 0;
+        margin-bottom: 0px;
+    }
+}
+
+@media screen and (min-device-width: 350px) and (max-device-width: 390px) {
+    .ul-step{
+        margin-left: -8px !important;
+    }
+}
+@media screen and (min-width: 420px) and (max-width: 765px) {
+    .ul-step{
+        margin-left: 6px !important;
+    }
+}
+@media only screen and (min-width: 767px) and (max-width: 1024px){
+    .nav-step{
+        font-size: 9pt;
+    }
+    .line{
+        width: 21px;
+    }
+    .port-route-detail{
+		font-size: 12pt !important;
+	}
+}
+/* end step reservation */
+/*form tiket mobile*/
+@media screen and (min-device-width: 375px) and (max-device-width: 389px) {
+	.form-reservation #shipclass .select2-container--default .select2-selection--single .select2-selection__rendered{
+		width: 125px;
+	}
+	.form-reservation #portorigin .select2-container--default .select2-selection--single .select2-selection__rendered{
+		width: 106px;
+	}
+	.form-reservation #portdestination .select2-container--default .select2-selection--single .select2-selection__rendered{
+		width: 113px;
+	}
+	#portorigin:first-child .select2-container--default .select2-selection--single{
+		max-width: 7.6rem;
+	}
+	#portdestination:first-child .select2-container--default .select2-selection--single{
+		max-width: 7.4rem;
+	}
+	#shipclass:first-child .select2-container--default .select2-selection--single{
+		max-width: 8.5rem;
+	}
+
+	.form-reservation #service_type_mobile .select2-container--default .select2-selection--single .select2-selection__rendered{
+		width: 116px;
+	}
+	#service_type_mobile:first-child .select2-container--default .select2-selection--single{
+		max-width: 8.5rem;
+	}
+
+	/* .swapicon {
+		margin-top: 2.5rem;
+		padding-left: 0.9rem;
+		padding-right: 0.9rem;
+	} */
+	.destination{
+		padding-left: 0px;
+	}
+}
+@media screen and (min-device-width: 390px) and (max-device-width: 392px) {
+	.form-reservation #shipclass .select2-container--default .select2-selection--single .select2-selection__rendered{
+		width: 125px;
+	}
+	.form-reservation #portorigin .select2-container--default .select2-selection--single .select2-selection__rendered{
+		width: 106px;
+	}
+	.form-reservation #portdestination .select2-container--default .select2-selection--single .select2-selection__rendered{
+		width: 113px;
+	}
+	#portorigin:first-child .select2-container--default .select2-selection--single{
+		max-width: 7.6rem;
+	}
+	#portdestination:first-child .select2-container--default .select2-selection--single{
+		max-width: 7.9rem;
+	}
+	#shipclass:first-child .select2-container--default .select2-selection--single{
+		max-width: 8.5rem;
+	}
+
+	.form-reservation #service_type_mobile .select2-container--default .select2-selection--single .select2-selection__rendered{
+		width: 116px;
+	}
+	#service_type_mobile:first-child .select2-container--default .select2-selection--single{
+		max-width: 9rem;
+	}
+
+	/* .swapicon {
+		margin-top: 2.5rem;
+		padding-left: 0.7rem;
+		padding-right: 0.9rem;
+	} */
+	.destination{
+		padding-left: 0px;
+	}
+}
+@media screen and (min-device-width: 393px) and (max-device-width: 411px) {
+	.form-reservation #shipclass .select2-container--default .select2-selection--single .select2-selection__rendered{
+		width: 125px;
+	}
+	.form-reservation #portorigin .select2-container--default .select2-selection--single .select2-selection__rendered{
+		width: 106px;
+	}
+	.form-reservation #portdestination .select2-container--default .select2-selection--single .select2-selection__rendered{
+		width: 113px;
+	}
+	#portorigin:first-child .select2-container--default .select2-selection--single{
+		max-width: 7.6rem;
+	}
+	#portdestination:first-child .select2-container--default .select2-selection--single{
+		max-width: 7.9rem;
+	}
+	#shipclass:first-child .select2-container--default .select2-selection--single{
+		max-width: 8.5rem;
+	}
+	#service_type_mobile:first-child .select2-container--default .select2-selection--single{
+		max-width: 9rem;
+	}
+	.form-reservation #service_type_mobile .select2-container--default .select2-selection--single .select2-selection__rendered{
+		width: 116px;
+	}
+	/* .swapicon {
+		margin-top: 2.5rem;
+		padding-left: 0.9rem;
+		padding-right: 0.9rem;
+	} */
+	.destination{
+		padding-left: 0px;
+	}
+}
+@media screen and (min-device-width: 412px) and (max-device-width: 427px) {
+	.form-reservation #portdestination .select2-container--default .select2-selection--single .select2-selection__rendered{
+		width: 127px;
+	}
+	.form-reservation #portorigin .select2-container--default .select2-selection--single .select2-selection__rendered{
+		width: 127px;
+	}
+	#portdestination:first-child .select2-container--default .select2-selection--single{
+		max-width: 8.5rem;
+	}
+	#portorigin:first-child .select2-container--default .select2-selection--single{
+		max-width: 8.6rem;
+	}
+	/* .swapicon {
+		margin-top: 2.5rem;
+		padding-left: 0.7rem;
+	} */
+	.destination{
+		padding-left: 0px;
+	}
+}
+@media screen and (min-device-width: 428px) and (max-device-width:438px){
+	.form-reservation #portdestination .select2-container--default .select2-selection--single .select2-selection__rendered{
+		width: 127px;
+	}
+	.form-reservation #portorigin .select2-container--default .select2-selection--single .select2-selection__rendered{
+		width: 127px;
+	}
+	#portdestination:first-child .select2-container--default .select2-selection--single{
+		max-width: 9rem;
+	}
+	#portorigin:first-child .select2-container--default .select2-selection--single{
+		max-width: 9rem;
+	}
+	/* .swapicon{
+		padding-left: 1rem;
+	} */
+	.destination{
+		padding-left: 0px;
+	}
+}
+@media screen and (min-device-width: 439px) and (max-device-width:480px){
+    .form-reservation #portdestination .select2-container--default .select2-selection--single .select2-selection__rendered{
+		width: 127px;
+	}
+	.form-reservation #portorigin .select2-container--default .select2-selection--single .select2-selection__rendered{
+		width: 127px;
+	}
+	#portdestination:first-child .select2-container--default .select2-selection--single{
+		max-width:9.4rem;
+	}
+	#portorigin:first-child .select2-container--default .select2-selection--single{
+		max-width: 9rem;
+	}
+	#shipclass:first-child .select2-container--default .select2-selection--single{
+		max-width:12rem;
+	}
+	/* .swapicon{
+		padding-left:0.86rem;
+	} */
+	.destination{
+		padding-left: 0px;
+	}
+	
+}
+.switch-place{
+	cursor: pointer;
+}
+.swap-pelabuhan{
+	transform: rotate(90deg);
+	padding-bottom: 23px;
+	padding-left: 10px;
+}
+/* .input-group .form-control:not(:first-child):not(:last-child) */
+@media screen and (min-device-width:360px) and (max-device-width:767px){
+	/* .flaticon-swap:before{
+		font-size: 1.4rem !important;
+		padding-left: 0.7rem;
+	} */
+	.form-reservation .input-group .select2-container--default .select2-selection--single:last-child,
+	.form-reservation .input-group .form-control:last-child {
+		border-left: 0 !important;
+		border-top:0 !important;
+		border-right:0 !important;
+	}
+	#portorigin .input-group-addon {
+		border-left: 0px;
+		border-top: 0px;
+	}
+	#portdestination .input-group-addon {
+		border-left: 0px;
+		border-top: 0px;
+	}
+	#shipclass .input-group-addon {
+		border-left: 0px;
+		border-top: 0px;
+	}
+	#service_type_mobile .input-group-addon {
+		border-left: 0px;
+		border-top: 0px;
+	}
+
+	#select-golongan .input-group-addon {
+		border-left: 0px;
+		border-top: 0px;
+	}
+	#pilih-tanggal .input-group-addon {
+		border-left: 0px;
+		border-top: 0px;
+	}
+	#date_origin{
+		border-top:0;
+	}
+	#form_passenger .input-group-addon {
+		border-left: 0px;
+		border-top: 0px;
+	}
+	#passenger-info{
+		border-top:0;
+		border-right:0;
+	}
+	/* .input-group .form-control:not(:first-child):not(:last-child) */
+}
+
+.swap {
+	background: url(../images/swap.png);
+	background-repeat: repeat;
+	background-size: auto;
+	height: 1.2rem;
+	width: 1.2rem;
+	display: block;
+	background-size: contain;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	position: absolute;
+	top: 40px;
+	z-index: 1;
+	right: 23px;
+}
+#refresh {
+	cursor: pointer;
+}
+@media screen and (min-device-width:767px){
+	.swap {
+		height: 1rem;
+		width: 1rem;
+		top: 8px;
+		right: 0px;
+	}
+}
+@media screen and (min-device-width: 350px) and (max-device-width: 374px){
+	.swap {
+		height: 0.99rem;
+		width:  0.99rem;
+	}
+	.form-reservation #portorigin .select2-container--default .select2-selection--single .select2-selection__rendered{
+		width: 105px;
+	}
+    .form-reservation #portdestination .select2-container--default .select2-selection--single .select2-selection__rendered{
+		width: 110px;
+	}
+	.form-reservation #shipclass .select2-container--default .select2-selection--single .select2-selection__rendered{
+		width: 119px;
+	}
+	.form-reservation #service_type_mobile .select2-container--default .select2-selection--single .select2-selection__rendered{
+		width: 116px;
+	}
+	#portorigin:first-child .select2-container--default .select2-selection--single{
+		max-width: 7rem;
+	}
+	#portdestination:first-child .select2-container--default .select2-selection--single{
+		max-width:7rem;
+	}
+	#shipclass:first-child .select2-container--default .select2-selection--single{
+		max-width:9rem;
+	}
+	#service_type_mobile:first-child .select2-container--default .select2-selection--single{
+		max-width:8rem;
+	}
+	/* .swapicon{
+		padding-left:0.86rem;
+	} */
+	.destination{
+		padding-left: 0px;
+	}
+}
+/*end form tiket mobile*/
+.ui-datepicker-prev span,
+.ui-datepicker-next span {
+  background-image: none !important;
+}
+
+.ui-datepicker-prev:before,
+.ui-datepicker-next:before {
+  font-family: 'Font Awesome 5 Free';
+  position: absolute;
+  top: 5px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  font-weight: 900;
+  align-items: center;
+  justify-content: center;
+}
+
+.ui-datepicker-prev:before {
+  content: "\f053";
+}
+
+.ui-datepicker-next:before {
+  content: "\f054";
+}
