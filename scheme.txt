@@ -1,0 +1,8 @@
+font : Montserrat 
+Border radius : 10 percent
+color scheme :
+C1E8FF
+7DA0C4
+5483B3
+052659
+021024
