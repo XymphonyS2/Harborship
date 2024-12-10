@@ -1,4 +1,5 @@
-font : Montserrat 
+font : 
+    src: url("https://assets.awwwards.com/assets/fonts/apercu/apercu-medium-pro.woff2") format("woff2");
 Border radius : 10 percent
 color scheme :
 C1E8FF
