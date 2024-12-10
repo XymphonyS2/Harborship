@@ -9230,6 +9230,8 @@ textarea.text-input {
 
 .menu-float__wrapper.is-open-main .menu-float__layout--primary .menu-float__content {
     width: 100%;
+    padding-left: 50%;
+    padding-right: 50%;
 }
 
 .menu-float__wrapper.is-open-main .menu-float__layout--primary {
