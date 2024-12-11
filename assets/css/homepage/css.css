@@ -1338,6 +1338,7 @@ body:has(.nav-header-main.is-open) {
     display: flex;
     align-items: center;
     gap: 16px;
+    justify-content: space-between;
 }
 
 .header-main__separator {
