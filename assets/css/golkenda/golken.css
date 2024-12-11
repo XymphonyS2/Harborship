@@ -1319,6 +1319,7 @@ body:has(.nav-header-main.is-open) {
 
 .header-main__right {
     display: flex;
+    justify-content: flex-end;
     gap: 12px;
     height: var(--sf-height);
     margin-left: clamp(8px, 3vw, 20px);
@@ -1326,7 +1327,7 @@ body:has(.nav-header-main.is-open) {
 
 .header-main__bts {
     display: flex;
-    gap: 12px;
+    gap: 1000px;
 }
 
 .header-main__bts .button {
@@ -1337,7 +1338,7 @@ body:has(.nav-header-main.is-open) {
     height: 100%;
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 20px;
 }
 
 .header-main__separator {
@@ -1348,6 +1349,7 @@ body:has(.nav-header-main.is-open) {
 
 .header-main__link {
     cursor: pointer;
+    display: inline-block;
 }
 
 .header-main__ico {
