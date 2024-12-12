@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="referrer" content="origin-when-cross-origin" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Harborship</title>
+  <title>Awwwards - Website Awards - Best Web Design Trends</title>
   <meta name="keywords" content="Website Awards, Web Design Inspiration, Webdesign Trends" />
   <meta property="og:site_name" content="Awwwards" />
   <meta property="og:image" content="https://assets.awwwards.com/assets/images/pages/about-certificates/awwwards.jpg" />
@@ -17,7 +17,7 @@
   <meta name="description"
     content="Awwwards are the Website Awards that recognize and promote the talent and effort of the best developers, designers and web agencies in the world." />
   <link rel="canonical" href="https://www.awwwards.com/" />
-  <link rel="icon" href="./assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="https://assets.awwwards.com/assets/images/favicon.svg" type="image/svg+xml" />
   <link rel="mask-icon" href="https://assets.awwwards.com/assets/images/favicon-safari.svg" color="#000000" />
   <link rel="apple-touch-icon" href="https://www.awwwards.com/apple-touch-icon.png" />
   <link rel="preload" href="https://assets.awwwards.com/assets/fonts/apercu/apercu-light-pro.woff2" as="font"
@@ -26,7 +26,7 @@
     crossorigin />
   <link rel="preload" href="https://assets.awwwards.com/assets/fonts/apercu/apercu-bold-pro.woff2" as="font"
     crossorigin />
-  <link rel="stylesheet" href="./assets/css/golkenda/golken.css" />
+  <link rel="stylesheet" href="./assets/css/cari.css/cari.css" />
 
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -85,6 +85,38 @@
       <div class="anchor-section" id="sotd">
         <div class="content-header" style="padding-bottom: 10px"></div>
       </div>
+
+      <div class="booking-container">
+        <div class="panel">
+            <div class="panel-heading">
+                <h4>Cari Tiket Anda</h4>
+                <span>Atur Jadwal Kedatangan Anda di Pelabuhan</span>
+            </div>
+            <div class="panel-body">
+                <form id="formSearch">
+                    <div class="form-group">
+                        <label for="departure">Tanggal Keberangkatan</label>
+                        <input type="date" id="departure" name="departure" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="destination">Tujuan</label>
+                        <select id="destination" name="destination" required>
+                            <option value="">Pilih Tujuan</option>
+                            <option value="bandung">Bandung</option>
+                            <option value="jakarta">Jakarta</option>
+                            <option value="surabaya">Surabaya</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="passengers">Jumlah Penumpang</label>
+                        <input type="number" id="passengers" name="passengers" required min="1">
+                    </div>
+                    <button type="submit" class="btn-submit">Cari Tiket</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
 
       <div class="anchor-section" id="nominees">
         <div class="block">
@@ -159,9 +191,20 @@
   </div>
 
 
+  <div class="anchor-section" id="courses">
+  </div>
+
+  <div class="anchor-section" id="collections"></div>
+
+  <div class="anchor-section" id="market">
+    <div class="block">
+      <div class="inner"></div>
+    </div>
+  </div>
+
   </section>
   <footer id="footer">
-    <div class="footer__bottom" style="margin-bottom: -100px;">
+    <div class="footer__bottom" style="margin-bottom: -0px;">
     </div>
     <div class="inner">
       <div class="footer__top" style="padding-bottom: 5%;">
