@@ -28,7 +28,7 @@
     crossorigin />
   <link rel="stylesheet" href="./assets/css/cari.css/cari.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>Booking Form</title>
+  <title>Booking Form</title>
 
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -89,196 +89,161 @@
         <div class="content-header" style="padding-bottom: 10px"></div>
       </div>
 
-<<<<<<< HEAD
       <div class="container mt-5">
         <h2>Cari Tiket Anda</h2>
         <form>
-            <div class="row g-3">
-                <div class="col-md-6">
-                    <label for="originPort" class="form-label">Pelabuhan Asal</label>
-                    <select class="form-select" id="originPort">
-                        <option selected>Pilih Asal</option>
-                        <!-- Options go here -->
-                    </select>
-                </div>
-                <div class="col-md-6">
-                    <label for="destinationPort" class="form-label">Pelabuhan Tujuan</label>
-                    <select class="form-select" id="destinationPort">
-                        <option selected>Pilih Tujuan</option>
-                        <!-- Options go here -->
-                    </select>
-                </div>
-                <div class="col-md-6">
-                    <label for="serviceClass" class="form-label">Kelas Layanan</label>
-                    <select class="form-select" id="serviceClass">
-                        <option selected>Pilih Layanan</option>
-                        <!-- Options go here -->
-                    </select>
-                </div>
-                <div class="col-md-6">
-                    <label for="userType" class="form-label">Jenis Pengguna Jasa</label>
-                    <select class="form-select" id="userType">
-                        <option selected>Berkendara atau tidak?</option>
-                        <!-- Options go here -->
-                    </select>
-                </div>
-                <div class="col-md-6">
-                    <label for="checkinDate" class="form-label">Jadwal Masuk Pelabuhan (Check In)</label>
-                    <input type="date" class="form-control" id="checkinDate">
-                </div>
-                <div class="col-md-6">
-                    <label for="checkinTime" class="form-label">Pilih Jam</label>
-                    <input type="time" class="form-control" id="checkinTime">
-                </div>
-                <div class="col-12">
-                    <label for="passengers" class="form-label">Penumpang</label>
-                    <input type="number" class="form-control" id="passengers" placeholder="Pilih Penumpang">
-                </div>
-                <div class="col-12">
-                    <button type="submit" class="btn btn-primary">Cari Jadwal</button>
-                </div>
-            </div>
-        </form>
-    </div>
-
-    <div class="container mt-5">
-      <h2>Cari Tiket Anda</h2>
-      <form>
           <div class="row g-3">
-              <!-- Existing fields for ports, service, date, time -->
-              <div class="col-md-6">
-                  <label for="originPort" class="form-label">Pelabuhan Asal</label>
-                  <select class="form-select" id="originPort">
-                      <option selected>Pilih Asal</option>
-                  </select>
-              </div>
-              <div class="col-md-6">
-                  <label for="destinationPort" class="form-label">Pelabuhan Tujuan</label>
-                  <select class="form-select" id="destinationPort">
-                      <option selected>Pilih Tujuan</option>
-                  </select>
-              </div>
-              <div class="col-md-6">
-                  <label for="serviceClass" class="form-label">Kelas Layanan</label>
-                  <select class="form-select" id="serviceClass">
-                      <option selected>Pilih Layanan</option>
-                  </select>
-              </div>
-              <div class="col-md-6">
-                  <label for="userType" class="form-label">Jenis Pengguna Jasa</label>
-                  <select class="form-select" id="userType">
-                      <option selected>Berkendara atau tidak?</option>
-                  </select>
-              </div>
-              <div class="col-md-6">
-                  <label for="checkinDate" class="form-label">Jadwal Masuk Pelabuhan (Check In)</label>
-                  <input type="date" class="form-control" id="checkinDate">
-              </div>
-              <div class="col-md-6">
-                  <label for="checkinTime" class="form-label">Pilih Jam</label>
-                  <input type="time" class="form-control" id="checkinTime">
-              </div>
-
-              <!-- Button to trigger modal for selecting passengers -->
-              <div class="col-12">
-                  <label for="passengerButton" class="form-label">Penumpang</label>
-                  <button type="button" class="dropdown-like" data-bs-toggle="modal" data-bs-target="#passengerModal">
-                      Pilih Penumpang
-                  </button>
-              </div>
-
-              <div class="col-12">
-                  <button type="submit" class="btn btn-primary">Cari Jadwal</button>
-              </div>
+            <div class="col-md-6">
+              <label for="originPort" class="form-label">Pelabuhan Asal</label>
+              <select class="form-select" id="originPort">
+                <option selected>Pilih Asal</option>
+                <!-- Options go here -->
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label for="destinationPort" class="form-label">Pelabuhan Tujuan</label>
+              <select class="form-select" id="destinationPort">
+                <option selected>Pilih Tujuan</option>
+                <!-- Options go here -->
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label for="serviceClass" class="form-label">Kelas Layanan</label>
+              <select class="form-select" id="serviceClass">
+                <option selected>Pilih Layanan</option>
+                <!-- Options go here -->
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label for="userType" class="form-label">Jenis Pengguna Jasa</label>
+              <select class="form-select" id="userType">
+                <option selected>Berkendara atau tidak?</option>
+                <!-- Options go here -->
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label for="checkinDate" class="form-label">Jadwal Masuk Pelabuhan (Check In)</label>
+              <input type="date" class="form-control" id="checkinDate">
+            </div>
+            <div class="col-md-6">
+              <label for="checkinTime" class="form-label">Pilih Jam</label>
+              <input type="time" class="form-control" id="checkinTime">
+            </div>
+            <div class="col-12">
+              <label for="passengers" class="form-label">Penumpang</label>
+              <input type="number" class="form-control" id="passengers" placeholder="Pilih Penumpang">
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-primary">Cari Jadwal</button>
+            </div>
           </div>
-      </form>
-  </div>
-
-  <!-- Modal for passenger selection -->
-  <div class="modal fade" id="passengerModal" tabindex="-1" aria-labelledby="passengerModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-          <div class="modal-content">
-              <div class="modal-header">
-                  <h5 class="modal-title" id="passengerModalLabel">Penumpang</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                  <!-- Modal content for each type of passenger -->
-                  <div class="mb-3">
-                      <label class="form-label">Dewasa (Usia 5 th keatas)</label>
-                      <div class="input-group">
-                          <button class="btn btn-outline-secondary" type="button">-</button>
-                          <input type="text" class="form-control text-center" value="0" readonly>
-                          <button class="btn btn-outline-secondary" type="button">+</button>
-                      </div>
-                  </div>
-                  <div class="mb-3">
-                      <label class="form-label">Lansia (Usia 60 th keatas)</label>
-                      <div class="input-group">
-                          <button class="btn btn-outline-secondary" type="button">-</button>
-                          <input type="text" class="form-control text-center" value="0" readonly>
-                          <button class="btn btn-outline-secondary" type="button">+</button>
-                      </div>
-                  </div>
-                  <div class="mb-3">
-                      <label class="form-label">Anak (Usia 2-5 th)</label>
-                      <div class="input-group">
-                          <button class="btn btn-outline-secondary" type="button">-</button>
-                          <input type="text" class="form-control text-center" value="0" readonly>
-                          <button class="btn btn-outline-secondary" type="button">+</button>
-                      </div>
-                  </div>
-                  <div class="mb-3">
-                      <label class="form-label">Bayi (Di bawah 2 th)</label>
-                      <div class="input-group">
-                          <button class="btn btn-outline-secondary" type="button">-</button>
-                          <input type="text" class="form-control text-center" value="0" readonly>
-                          <button class="btn btn-outline-secondary" type="button">+</button>
-                      </div>
-                  </div>
-              </div>
-              <div class="modal-footer">
-                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Selesai</button>
-              </div>
-          </div>
+        </form>
       </div>
-  </div>
 
-  <!-- Bootstrap Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-=======
-      <div class="booking-container">
-        <div class="panel">
-          <div class="panel-heading">
-            <h4>Cari Tiket Anda</h4>
-            <span>Atur Jadwal Kedatangan Anda di Pelabuhan</span>
+      <div class="container mt-5">
+        <h2>Cari Tiket Anda</h2>
+        <form>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label for="originPort" class="form-label">Pelabuhan Asal</label>
+              <select class="form-select" id="originPort">
+                <option selected>Pilih Asal</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label for="destinationPort" class="form-label">Pelabuhan Tujuan</label>
+              <select class="form-select" id="destinationPort">
+                <option selected>Pilih Tujuan</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label for="serviceClass" class="form-label">Kelas Layanan</label>
+              <select class="form-select" id="serviceClass">
+                <option selected>Pilih Layanan</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label for="userType" class="form-label">Jenis Pengguna Jasa</label>
+              <select class="form-select" id="userType">
+                <option selected>Berkendara atau tidak?</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label for="checkinDate" class="form-label">Jadwal Masuk Pelabuhan (Check In)</label>
+              <input type="date" class="form-control" id="checkinDate">
+            </div>
+            <div class="col-md-6">
+              <label for="checkinTime" class="form-label">Pilih Jam</label>
+              <input type="time" class="form-control" id="checkinTime">
+            </div>
+
+            <div class="col-12">
+              <label for="passengerButton" class="form-label">Penumpang</label>
+              <button type="button" class="dropdown-like" data-bs-toggle="modal" data-bs-target="#passengerModal">
+                Jumlah Penumpang
+              </button>
+            </div>
+
+            <div class="col-12">
+              <button type="submit" class="btn btn-primary">Cari Jadwal</button>
+            </div>
           </div>
-          <div class="panel-body">
-            <form id="formSearch">
-              <div class="form-group">
-                <label for="departure">Tanggal Keberangkatan</label>
-                <input type="date" id="departure" name="departure" required>
+        </form>
+      </div>
+
+      <!-- Modal for passenger selection -->
+      <div class="modal fade" id="passengerModal" tabindex="-1" aria-labelledby="passengerModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="passengerModalLabel">Penumpang</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <!-- Modal content for each type of passenger -->
+              <div class="mb-3">
+                <label class="form-label">Dewasa (Usia 5 th keatas)</label>
+                <div class="input-group">
+                  <button class="btn btn-outline-secondary" type="button">-</button>
+                  <input type="text" class="form-control text-center" value="0" readonly>
+                  <button class="btn btn-outline-secondary" type="button">+</button>
+                </div>
               </div>
-              <div class="form-group">
-                <label for="destination">Tujuan</label>
-                <select id="destination" name="destination" required>
-                  <option value="">Pilih Tujuan</option>
-                  <option value="bandung">Bandung</option>
-                  <option value="jakarta">Jakarta</option>
-                  <option value="surabaya">Surabaya</option>
-                </select>
+              <div class="mb-3">
+                <label class="form-label">Lansia (Usia 60 th keatas)</label>
+                <div class="input-group">
+                  <button class="btn btn-outline-secondary" type="button">-</button>
+                  <input type="text" class="form-control text-center" value="0" readonly>
+                  <button class="btn btn-outline-secondary" type="button">+</button>
+                </div>
               </div>
-              <div class="form-group">
-                <label for="passengers">Jumlah Penumpang</label>
-                <input type="number" id="passengers" name="passengers" required min="1">
+              <div class="mb-3">
+                <label class="form-label">Anak (Usia 2-5 th)</label>
+                <div class="input-group">
+                  <button class="btn btn-outline-secondary" type="button">-</button>
+                  <input type="text" class="form-control text-center" value="0" readonly>
+                  <button class="btn btn-outline-secondary" type="button">+</button>
+                </div>
               </div>
-              <button type="submit" class="btn-submit">Cari Tiket</button>
-            </form>
+              <div class="mb-3">
+                <label class="form-label">Bayi (Di bawah 2 th)</label>
+                <div class="input-group">
+                  <button class="btn btn-outline-secondary" type="button">-</button>
+                  <input type="text" class="form-control text-center" value="0" readonly>
+                  <button class="btn btn-outline-secondary" type="button">+</button>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Selesai</button>
+            </div>
           </div>
         </div>
       </div>
 
->>>>>>> 7015d996914039538a43de291ae47bcb71f9cd67
+      <!-- Bootstrap Bundle with Popper -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 
   </div>
