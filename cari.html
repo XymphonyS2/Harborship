@@ -26,9 +26,9 @@
     crossorigin />
   <link rel="preload" href="https://assets.awwwards.com/assets/fonts/apercu/apercu-bold-pro.woff2" as="font"
     crossorigin />
-  <link rel="stylesheet" href="./assets/css/cari.css/cari.css" />
+  <link rel="stylesheet" href="./assets/css/syarat/syarat.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <title>Booking Form</title>
+
 
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -68,8 +68,8 @@
           <div class="header-main" data-search-target="headerMain">
             <div class="header-main__container" style="justify-content: space-between; ">
               <a href="/" class="header-main__logo" aria-label="Awwwards"
-                style="width: 10%; height: 10%; margin-top: -3%;">
-                <img src="./assets/img/ProyekBaru.svg" alt="logo" />
+                style="width: 10%; height: 10%; margin-top: -65px;">
+                <img src="./assets/img/ProyekBaru.svg" alt="logo" >
               </a>
               <div class="header-main__right" style="text-align: right;">
                 <div class="header-main__user">
@@ -84,134 +84,82 @@
         </div>
       </div>
     </header>
-    <section id="content">
+    <section id="content" style="padding-bottom: -20%;">
       <div class="anchor-section" id="sotd">
-        <div class="content-header" style="padding-bottom: 10px"></div>
+        <div class="content-header" style="padding-bottom: 5px"></div>
       </div>
 
       <div class="container mt-5">
         <h2>Cari Tiket Anda</h2>
-        <form>
+        <form action="cari.php" method="POST">
           <div class="row g-3">
-            <div class="col-md-6">
-              <label for="originPort" class="form-label">Pelabuhan Asal</label>
-              <select class="form-select" id="originPort">
-                <option selected>Pilih Asal</option>
-                <!-- Options go here -->
-              </select>
+              <div class="col-md-6">
+                  <label for="originPort" class="form-label">Pelabuhan Asal</label>
+                  <select class="form-select" id="originPort" name="originPort">
+                      <option selected>Pilih Asal</option>
+                      <!-- Opsi diisi oleh fetchData.php -->
+                  </select>
+              </div>
+              <div class="col-md-6">
+                  <label for="destinationPort" class="form-label">Pelabuhan Tujuan</label>
+                  <select class="form-select" id="destinationPort" name="destinationPort">
+                      <option selected>Pilih Tujuan</option>
+                      <!-- Opsi diisi oleh fetchData.php -->
+                  </select>
+              </div>
+              <div class="col-md-6">
+                  <label for="serviceClass" class="form-label">Kelas Layanan</label>
+                  <select class="form-select" id="serviceClass" name="serviceClass">
+                      <option selected>Pilih Layanan</option>
+                      <!-- Opsi diisi oleh fetchData.php -->
+                  </select>
+              </div>
+              <div class="col-md-6">
+                  <label for="userType" class="form-label">Jenis Pengguna Jasa</label>
+                  <select class="form-select" id="userType" name="userType">
+                      <option selected>Berkendara atau tidak?</option>
+                      <!-- Opsi diisi oleh fetchData.php -->
+                  </select>
+              </div>
+              <div class="col-md-6">
+                  <label for="checkinDate" class="form-label">Jadwal Masuk Pelabuhan (Check In)</label>
+                  <input type="date" class="form-control" id="checkinDate" name="checkinDate">
+              </div>
+              <div class="col-md-6">
+                  <label for="checkinTime" class="form-label">Pilih Jam</label>
+                  <input type="time" class="form-control" id="checkinTime" name="checkinTime">
+              </div>
+      
+              <div class="row g-3">
+                <div class="col-md-6">
+                    <label for="lansia" class="form-label">Jumlah Lansia</label>
+                    <input type="number" class="form-control" id="lansia" name="lansia" min="0" placeholder="0">
+                </div>
+                <div class="col-md-6">
+                    <label for="dewasa" class="form-label">Jumlah Dewasa</label>
+                    <input type="number" class="form-control" id="dewasa" name="dewasa" min="0" placeholder="0">
+                </div>
+                <div class="col-md-6">
+                    <label for="anak" class="form-label">Jumlah Anak-Anak</label>
+                    <input type="number" class="form-control" id="anak" name="anak" min="0" placeholder="0">
+                </div>
+                <div class="col-md-6">
+                    <label for="bayi" class="form-label">Jumlah Bayi</label>
+                    <input type="number" class="form-control" id="bayi" name="bayi" min="0" placeholder="0">
+                </div>
             </div>
-            <div class="col-md-6">
-              <label for="destinationPort" class="form-label">Pelabuhan Tujuan</label>
-              <select class="form-select" id="destinationPort">
-                <option selected>Pilih Tujuan</option>
-                <!-- Options go here -->
-              </select>
-            </div>
-            <div class="col-md-6">
-              <label for="serviceClass" class="form-label">Kelas Layanan</label>
-              <select class="form-select" id="serviceClass">
-                <option selected>Pilih Layanan</option>
-                <!-- Options go here -->
-              </select>
-            </div>
-            <div class="col-md-6">
-              <label for="userType" class="form-label">Jenis Pengguna Jasa</label>
-              <select class="form-select" id="userType">
-                <option selected>Berkendara atau tidak?</option>
-                <!-- Options go here -->
-              </select>
-            </div>
-            <div class="col-md-6">
-              <label for="checkinDate" class="form-label">Jadwal Masuk Pelabuhan (Check In)</label>
-              <input type="date" class="form-control" id="checkinDate">
-            </div>
-            <div class="col-md-6">
-              <label for="checkinTime" class="form-label">Pilih Jam</label>
-              <input type="time" class="form-control" id="checkinTime">
-            </div>
-            <div class="col-12">
-              <label for="passengers" class="form-label">Penumpang</label>
-              <input type="number" class="form-control" id="passengers" placeholder="Jumlah Penumpang">
-            </div>
-            <div class="col-12">
-              <button type="submit" class="btn btn-primary">Cari Jadwal</button>
-            </div>
+            
+            
+              <div class="col-12">
+                  <button type="submit" class="btn btn-primary">Cari Jadwal</button>
+              </div>
           </div>
-        </form>
+      </form>
       </div>
 
-      <div class="container mt-5">
-        <h2>Cari Tiket Anda</h2>
-        <form>
-          <div class="row g-3">
-            <div class="col-md-6">
-              <label for="originPort" class="form-label">Pelabuhan Asal</label>
-              <select class="form-select" id="originPort">
-                <option selected>Pilih Asal</option>
-              </select>
-            </div>
-            <div class="col-md-6">
-              <label for="destinationPort" class="form-label">Pelabuhan Tujuan</label>
-              <select class="form-select" id="destinationPort">
-                <option selected>Pilih Tujuan</option>
-              </select>
-            </div>
-            <div class="col-md-6">
-              <label for="serviceClass" class="form-label">Kelas Layanan</label>
-              <select class="form-select" id="serviceClass">
-                <option selected>Pilih Layanan</option>
-              </select>
-            </div>
-            <div class="col-md-6">
-              <label for="userType" class="form-label">Jenis Pengguna Jasa</label>
-              <select class="form-select" id="userType">
-                <option selected>Berkendara atau tidak?</option>
-              </select>
-            </div>
-            <div class="col-md-6">
-              <label for="checkinDate" class="form-label">Jadwal Masuk Pelabuhan (Check In)</label>
-              <input type="date" class="form-control" id="checkinDate">
-            </div>
-            <div class="col-md-6">
-              <label for="checkinTime" class="form-label">Pilih Jam</label>
-              <input type="time" class="form-control" id="checkinTime">
-            </div>
-
-            <div class="col-12">
-              <label for="passengerButton" class="form-label">Penumpang</label>
-              <button type="button" class="dropdown-like" data-bs-toggle="modal" data-bs-target="#passengerModal">
-                Jumlah Penumpang
-              </button>
-            </div>
-
-            <div class="col-12">
-              <button type="submit" class="btn btn-primary">Cari Jadwal</button>
-            </div>
-          </div>
-        </form>
-      </div>
-    </section>
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-
-  </div>
-
-
-  <div class="anchor-section" id="courses">
-  </div>
-
-  <div class="anchor-section" id="collections"></div>
-
-  <div class="anchor-section" id="market">
-    <div class="block">
-      <div class="inner"></div>
-    </div>
-  </div>
+  </section>
   <footer id="footer">
-    <div class="footer__bottom" style="margin-bottom: -0px;">
+    <div class="footer__bottom" style="margin-bottom: -0px; margin-top: 5%;">
     </div>
     <div class="inner">
       <div class="footer__top" style="padding-bottom: 5%;">
@@ -242,7 +190,7 @@
               <li><a style="font-weight: lighter;" href="tel:(021) 191" target="_blank">Syarat & Ketentuan</a></li>
               <li><a style="font-weight: lighter;" href="https://wa.me/+6282181512200" target="_blank">Kebijakan
                   Privasi</a></li>
-              <li><a style="font-weight: lighter;" href="mailto:cs@harborship.co.id">Golongan Kendaraan</a></li>
+              <li><a style="font-weight: lighter;" href="./golkendaraan.html">Golongan Kendaraan</a></li>
             </ul>
           </div>
           <div class="box-featured" style="margin-right: 3%;">
