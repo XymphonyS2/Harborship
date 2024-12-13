@@ -130,13 +130,29 @@
                   <input type="time" class="form-control" id="checkinTime" name="checkinTime">
               </div>
       
-              <div class="col-12">
-                  <label for="passengerButton" class="form-label">Penumpang</label>
-                  <button type="button" class="dropdown-like" data-bs-toggle="modal" data-bs-target="#passengerModal">
-                      Jumlah Penumpang
-                  </button>
-              </div>
-      
+              <div class="row g-3">
+                <div class="col-md-6">
+                    <label for="lansia" class="form-label">Jumlah Lansia</label>
+                    <input type="number" class="form-control" id="lansia" name="lansia" min="0" placeholder="0">
+                </div>
+                <div class="col-md-6">
+                    <label for="dewasa" class="form-label">Jumlah Dewasa</label>
+                    <input type="number" class="form-control" id="dewasa" name="dewasa" min="0" placeholder="0">
+                </div>
+                <div class="col-md-6">
+                    <label for="anak" class="form-label">Jumlah Anak-Anak</label>
+                    <input type="number" class="form-control" id="anak" name="anak" min="0" placeholder="0">
+                </div>
+                <div class="col-md-6">
+                    <label for="bayi" class="form-label">Jumlah Bayi</label>
+                    <input type="number" class="form-control" id="bayi" name="bayi" min="0" placeholder="0">
+                </div>
+                <div class="col-md-6">
+                    <label for="checkinDate" class="form-label">Jadwal Masuk Pelabuhan (Check In)</label>
+                    <input type="date" class="form-control" id="checkinDate" name="checkinDate">
+                </div>
+            </div>
+            
               <div class="col-12">
                   <button type="submit" class="btn btn-primary">Cari Jadwal</button>
               </div>
