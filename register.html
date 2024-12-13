@@ -93,58 +93,58 @@
                 Sudah punya akun? <a href="./login.html" class="signup-link">Masuk sekarang</a>
             </p>
 
-            <form>
+            <form action="register.php" method="POST">
                 <div class="mb-3">
                     <label class="form-label">Nama Lengkap</label>
-                    <input type="text" class="form-control" placeholder="Masukkan Nama Lengkap" required>
+                    <input type="text" class="form-control" name="nama_lengkap" placeholder="Masukkan Nama Lengkap" required>
                 </div>
-
+            
                 <div class="mb-3">
                     <label class="form-label">Jenis Kelamin</label>
-                    <input type="text" class="form-control" placeholder="Masukkan Jenis Kelamin" required>
+                    <input type="text" class="form-control" name="kelamin" placeholder="Masukkan Jenis Kelamin" required>
                 </div>
-
+            
                 <div class="mb-3">
                     <label class="form-label">Tanggal Lahir</label>
-                    <input type="text" class="form-control" placeholder="Masukkan Tanggal Lahir" required>
+                    <input type="date" class="form-control" name="tanggal_lahir" placeholder="Masukkan Tanggal Lahir" required>
                 </div>
-
+            
                 <div class="mb-3">
                     <label class="form-label">Nomer Induk Kependudukan</label>
-                    <input type="text" class="form-control" placeholder="Masukkan Nomer Induk Kependudukan" required>
+                    <input type="text" class="form-control" name="nik" placeholder="Masukkan Nomer Induk Kependudukan" required>
                 </div>
-
+            
                 <div class="mb-3">
                     <label class="form-label">Nomer Telepon</label>
-                    <input type="text" class="form-control" placeholder="Masukkan Nomer Telepon" required>
+                    <input type="text" class="form-control" name="nomer_telepon" placeholder="Masukkan Nomer Telepon" required>
                 </div>
-
+            
                 <div class="mb-3">
                     <label class="form-label">Kota Asal</label>
-                    <input type="text" class="form-control" placeholder="Masukkan Kota Asal" required>
+                    <input type="text" class="form-control" name="kota_asal" placeholder="Masukkan Kota Asal" required>
                 </div>
-
+            
                 <div class="mb-3">
                     <label class="form-label">Email</label>
-                    <input type="text" class="form-control" placeholder="Email" required>
+                    <input type="email" class="form-control" name="email" placeholder="Email" required>
                 </div>
-
+            
                 <div class="mb-3">
                     <label class="form-label">Password</label>
-                    <input type="text" class="form-control" placeholder="Password" required>
+                    <input type="password" class="form-control" name="password" placeholder="Password" required>
                     <div class="form-text">Minimal berisi 8 karakter, mengandung huruf kecil, huruf besar dan angka</div>
                 </div>
-
+            
                 <div class="mb-3">
                     <label class="form-label">Konfirmasi Password</label>
-                    <input type="text" class="form-control" placeholder="Konfirmasi Password" required>
+                    <input type="password" class="form-control" name="confirm_password" placeholder="Konfirmasi Password" required>
                 </div>
-
-
+            
                 <div class="form-text" style="text-align: center;">Dengan mengklik tombol dibawah ini, saya setuju dengan Kebijakan Privasi serta Syarat & Ketentuan Harborship</div>
-
+            
                 <button type="submit" class="btn masuk-btn text-white">Daftar</button>
             </form>
+            
         </div>
     </div>
 
