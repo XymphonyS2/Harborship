@@ -1,14 +1,10 @@
-include 'koneksi.php';
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Ambil dan sanitasi data dari form
-    $originPort = mysqli_real_escape_string($koneksi, $_POST['originPort']);
-    $destinationPort = mysqli_real_escape_string($koneksi, $_POST['destinationPort']);
-    // dan seterusnya untuk setiap input
+<?php
+require 'koneksi.php';
 
-    // Query database atau lakukan logika bisnis lainnya
-    // Misalnya, simpan data ke database atau cek ketersediaan
 
-    // Redirect atau kirimkan output
-    header('Location: successPage.html'); // Atau tampilkan pesan kesalahan
-    exit();
-}
+<strong class="header-main__link hidden-sm" data-controller="login" data-action="click->login#register">
+    <?php 
+        session_start();
+        echo isset($_SESSION['nama_lengkap']) ? $_SESSION['nama_lengkap'] : 'Sign Up'; 
+    ?>
+</strong>

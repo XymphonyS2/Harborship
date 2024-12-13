@@ -84,12 +84,15 @@ label {
 }
 
 .container {
-	padding-right: 15px;
-	padding-left: 15px;
-	margin-right: auto;
-	margin-left: auto;
-	border-radius: 10px;
+    padding: 25px 50px; /* top and bottom 25px, right and left 50px */
+    width: 90%;
+    max-width: 5000px; /* limits the maximum width while allowing responsiveness */
+    border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #dee2e6;
 }
 
 .my-container {
@@ -192,12 +195,34 @@ label {
 	}
 }
 
+.footer__menu a, .link-underlined {
+    text-decoration: none; /* Removes underlines */
+    font-weight: lighter; /* Consistent with your inline styling */
+}
+
+/* Optionally add hover effects to improve user interaction */
+.footer__menu a:hover, .link-underlined:hover {
+    text-decoration: underline; /* Adds underline on hover */
+}
+
+
+.ui-datepicker td span,
+.ui-datepicker td a {
+	display: block;
+	padding: .2em;
+	text-align: right;
+	text-decoration: none;
+}
+
 .nav-tabs > li > a,
 .nav-tabs.nav-justified > .active > a,
 .nav-tabs.nav-justified > .active > a:focus,
 .nav-tabs.nav-justified > .active > a:hover {
 	border: none;
 }
+
+
+
 #popup-info .flaticon-error,
 .modal-info .flaticon-error {
 	cursor: pointer;
