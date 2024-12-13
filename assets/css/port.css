@@ -61,6 +61,7 @@ label {
 .btn:focus {
 	box-shadow: none;
 	color: inherit;
+	align-items: center;
 }
 
 #form-schedule {

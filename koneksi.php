@@ -2,7 +2,7 @@
 $host = 'localhost';
 $username = 'root';
 $password = '';
-$dbname = 'harbroship';
+$dbname = 'harborship';
 
 // Koneksi ke database
 $conn = new mysqli($host, $username, $password, $dbname);
