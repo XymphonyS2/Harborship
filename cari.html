@@ -131,7 +131,7 @@
             </div>
             <div class="col-12">
               <label for="passengers" class="form-label">Penumpang</label>
-              <input type="number" class="form-control" id="passengers" placeholder="Pilih Penumpang">
+              <input type="number" class="form-control" id="passengers" placeholder="Jumlah Penumpang">
             </div>
             <div class="col-12">
               <button type="submit" class="btn btn-primary">Cari Jadwal</button>
@@ -190,63 +190,13 @@
           </div>
         </form>
       </div>
-
-      <!-- Modal for passenger selection -->
-      <div class="modal fade" id="passengerModal" tabindex="-1" aria-labelledby="passengerModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="passengerModalLabel">Penumpang</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <!-- Modal content for each type of passenger -->
-              <div class="mb-3">
-                <label class="form-label">Dewasa (Usia 5 th keatas)</label>
-                <div class="input-group">
-                  <button class="btn btn-outline-secondary" type="button">-</button>
-                  <input type="text" class="form-control text-center" value="0" readonly>
-                  <button class="btn btn-outline-secondary" type="button">+</button>
-                </div>
-              </div>
-              <div class="mb-3">
-                <label class="form-label">Lansia (Usia 60 th keatas)</label>
-                <div class="input-group">
-                  <button class="btn btn-outline-secondary" type="button">-</button>
-                  <input type="text" class="form-control text-center" value="0" readonly>
-                  <button class="btn btn-outline-secondary" type="button">+</button>
-                </div>
-              </div>
-              <div class="mb-3">
-                <label class="form-label">Anak (Usia 2-5 th)</label>
-                <div class="input-group">
-                  <button class="btn btn-outline-secondary" type="button">-</button>
-                  <input type="text" class="form-control text-center" value="0" readonly>
-                  <button class="btn btn-outline-secondary" type="button">+</button>
-                </div>
-              </div>
-              <div class="mb-3">
-                <label class="form-label">Bayi (Di bawah 2 th)</label>
-                <div class="input-group">
-                  <button class="btn btn-outline-secondary" type="button">-</button>
-                  <input type="text" class="form-control text-center" value="0" readonly>
-                  <button class="btn btn-outline-secondary" type="button">+</button>
-                </div>
-              </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Selesai</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Bootstrap Bundle with Popper -->
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </section>
 
 
-  </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
   </div>
 
 
@@ -260,8 +210,6 @@
       <div class="inner"></div>
     </div>
   </div>
-
-  </section>
   <footer id="footer">
     <div class="footer__bottom" style="margin-bottom: -0px;">
     </div>
@@ -346,6 +294,54 @@
     script.async = true;
     document.body.appendChild(script);
   </script>
+
+  <!-- Modal for passenger selection -->
+  <div class="modal fade" id="passengerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="passengerModalLabel">Penumpang</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label class="form-label">Dewasa (Usia 5 th keatas)</label>
+            <div class="input-group">
+              <button class="btn btn-outline-secondary" type="button">-</button>
+              <input type="text" class="form-control text-center" value="0" readonly>
+              <button class="btn btn-outline-secondary" type="button">+</button>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Lansia (Usia 60 th keatas)</label>
+            <div class="input-group">
+              <button class="btn btn-outline-secondary" type="button">-</button>
+              <input type="text" class="form-control text-center" value="0" readonly>
+              <button class="btn btn-outline-secondary" type="button">+</button>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Anak (Usia 2-5 th)</label>
+            <div class="input-group">
+              <button class="btn btn-outline-secondary" type="button">-</button>
+              <input type="text" class="form-control text-center" value="0" readonly>
+              <button class="btn btn-outline-secondary" type="button">+</button>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Bayi (Di bawah 2 th)</label>
+            <div class="input-group">
+              <button class="btn btn-outline-secondary" type="button">-</button>
+              <input type="text" class="form-control text-center" value="0" readonly>
+              <button class="btn btn-outline-secondary" type="button">+</button>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Selesai</button>
+        </div>
+      </div>
+    </div>
   </div>
 </body>
 
