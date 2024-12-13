@@ -1,14 +1,13 @@
-<?php
-$host = 'localhost'; // Host database
-$username = 'root'; // Username database
-$password = 'harborship'; // Password database (kosongkan jika menggunakan XAMPP)
-$database = 'nama_database'; // Ganti dengan nama database yang kamu gunakan
+include 'koneksi.php'; // Sertakan file koneksi
 
-// Membuat koneksi ke database
-$koneksi = mysqli_connect($host, $username, $password, $database);
+// Query untuk mengambil daftar pelabuhan
+$query = "SELECT id_rute, pelabuhan_asal, pelabuhan_tujuan FROM rute";
+$result = mysqli_query($koneksi, $query);
 
-// Cek koneksi
-if (!$koneksi) {
-    die("Koneksi gagal: " . mysqli_connect_error());
+$pelabuhanAsal = [];
+$pelabuhanTujuan = [];
+
+while ($row = mysqli_fetch_assoc($result)) {
+    $pelabuhanAsal[$row['id_rute']] = $row['pelabuhan_asal'];
+    $pelabuhanTujuan[$row['id_rute']] = $row['pelabuhan_tujuan'];
 }
-?>
