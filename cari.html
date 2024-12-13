@@ -242,6 +242,54 @@
     script.async = true;
     document.body.appendChild(script);
   </script>
+
+  <!-- Modal for passenger selection -->
+  <div class="modal fade" id="passengerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="passengerModalLabel">Penumpang</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label class="form-label">Dewasa (Usia 5 th keatas)</label>
+            <div class="input-group">
+              <button class="btn btn-outline-secondary" type="button">-</button>
+              <input type="text" class="form-control text-center" value="0" readonly>
+              <button class="btn btn-outline-secondary" type="button">+</button>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Lansia (Usia 60 th keatas)</label>
+            <div class="input-group">
+              <button class="btn btn-outline-secondary" type="button">-</button>
+              <input type="text" class="form-control text-center" value="0" readonly>
+              <button class="btn btn-outline-secondary" type="button">+</button>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Anak (Usia 2-5 th)</label>
+            <div class="input-group">
+              <button class="btn btn-outline-secondary" type="button">-</button>
+              <input type="text" class="form-control text-center" value="0" readonly>
+              <button class="btn btn-outline-secondary" type="button">+</button>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Bayi (Di bawah 2 th)</label>
+            <div class="input-group">
+              <button class="btn btn-outline-secondary" type="button">-</button>
+              <input type="text" class="form-control text-center" value="0" readonly>
+              <button class="btn btn-outline-secondary" type="button">+</button>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Selesai</button>
+        </div>
+      </div>
+    </div>
   </div>
 </body>
 
