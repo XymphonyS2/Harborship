@@ -1,13 +1,14 @@
-include 'koneksi.php'; // Sertakan file koneksi
+<?php
+$host = 'localhost';
+$username = 'root';
+$password = '';
+$dbname = 'harbroship';
 
-// Query untuk mengambil daftar pelabuhan
-$query = "SELECT id_rute, pelabuhan_asal, pelabuhan_tujuan FROM rute";
-$result = mysqli_query($koneksi, $query);
+// Koneksi ke database
+$conn = new mysqli($host, $username, $password, $dbname);
 
-$pelabuhanAsal = [];
-$pelabuhanTujuan = [];
-
-while ($row = mysqli_fetch_assoc($result)) {
-    $pelabuhanAsal[$row['id_rute']] = $row['pelabuhan_asal'];
-    $pelabuhanTujuan[$row['id_rute']] = $row['pelabuhan_tujuan'];
+// Cek koneksi
+if ($conn->connect_error) {
+    die("Koneksi gagal: " . $conn->connect_error);
 }
+?>
