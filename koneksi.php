@@ -1,13 +1,13 @@
 <?php
-$host = 'localhost';
-$username = 'root';
-$password = '';
-$dbname = 'harbroship';
+$host = "localhost"; // ganti dengan host jika berbeda
+$username = "root"; // ganti dengan username database Anda
+$password = ""; // ganti dengan password database Anda jika ada
+$database = "harbroship"; // nama database
 
-// Koneksi ke database
-$conn = new mysqli($host, $username, $password, $dbname);
+// Membuat koneksi ke database
+$conn = new mysqli($host, $username, $password, $database);
 
-// Cek koneksi
+// Mengecek koneksi
 if ($conn->connect_error) {
     die("Koneksi gagal: " . $conn->connect_error);
 }

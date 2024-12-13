@@ -76,7 +76,7 @@
               <div class="header-main__right" style="text-align: right;">
                 <div class="header-main__user">
                   <strong class="header-main__link hidden-sm" data-controller="login"
-                    data-action="click->login#register">Sign Up</strong>
+                    data-action="click->login#register">Muhammad Hafiz Assyifa</strong>
                 </div>
               </div>
             </div>
@@ -89,73 +89,64 @@
         <div class="content-header" style="padding-bottom: 5px"></div>
       </div>
 
-      <div class="container mt-5">
-        <h2>Cari Tiket Anda</h2>
+      <main class="container my-5">
+        <h2 class="mb-4">Cari Tiket Anda</h2>
         <form action="cari.php" method="POST">
           <div class="row g-3">
-              <div class="col-md-6">
-                  <label for="originPort" class="form-label">Pelabuhan Asal</label>
-                  <select class="form-select" id="originPort" name="originPort">
-                      <option selected>Pilih Asal</option>
-                      <!-- Opsi diisi oleh fetchData.php -->
-                  </select>
-              </div>
-              <div class="col-md-6">
-                  <label for="destinationPort" class="form-label">Pelabuhan Tujuan</label>
-                  <select class="form-select" id="destinationPort" name="destinationPort">
-                      <option selected>Pilih Tujuan</option>
-                      <!-- Opsi diisi oleh fetchData.php -->
-                  </select>
-              </div>
-              <div class="col-md-6">
-                  <label for="serviceClass" class="form-label">Kelas Layanan</label>
-                  <select class="form-select" id="serviceClass" name="serviceClass">
-                      <option selected>Pilih Layanan</option>
-                      <!-- Opsi diisi oleh fetchData.php -->
-                  </select>
-              </div>
-              <div class="col-md-6">
-                  <label for="userType" class="form-label">Jenis Pengguna Jasa</label>
-                  <select class="form-select" id="userType" name="userType">
-                      <option selected>Berkendara atau tidak?</option>
-                      <!-- Opsi diisi oleh fetchData.php -->
-                  </select>
-              </div>
-              <div class="col-md-6">
-                  <label for="checkinDate" class="form-label">Jadwal Masuk Pelabuhan (Check In)</label>
-                  <input type="date" class="form-control" id="checkinDate" name="checkinDate">
-              </div>
-              <div class="col-md-6">
-                  <label for="checkinTime" class="form-label">Pilih Jam</label>
-                  <input type="time" class="form-control" id="checkinTime" name="checkinTime">
-              </div>
-      
-              <div class="row g-3">
-                <div class="col-md-6">
-                    <label for="lansia" class="form-label">Jumlah Lansia</label>
-                    <input type="number" class="form-control" id="lansia" name="lansia" min="0" placeholder="0">
-                </div>
-                <div class="col-md-6">
-                    <label for="dewasa" class="form-label">Jumlah Dewasa</label>
-                    <input type="number" class="form-control" id="dewasa" name="dewasa" min="0" placeholder="0">
-                </div>
-                <div class="col-md-6">
-                    <label for="anak" class="form-label">Jumlah Anak-Anak</label>
-                    <input type="number" class="form-control" id="anak" name="anak" min="0" placeholder="0">
-                </div>
-                <div class="col-md-6">
-                    <label for="bayi" class="form-label">Jumlah Bayi</label>
-                    <input type="number" class="form-control" id="bayi" name="bayi" min="0" placeholder="0">
-                </div>
+            <div class="col-md-6">
+              <label for="originPort" class="form-label">Pelabuhan Asal</label>
+              <select class="form-select" id="originPort" name="originPort" required>
+                <option value="" disabled selected>Pilih Asal</option>
+              </select>
             </div>
-            
-            
-              <div class="col-12">
-                  <button type="submit" class="btn btn-primary">Cari Jadwal</button>
-              </div>
+            <div class="col-md-6">
+              <label for="destinationPort" class="form-label">Pelabuhan Tujuan</label>
+              <select class="form-select" id="destinationPort" name="destinationPort" required>
+                <option value="" disabled selected>Pilih Tujuan</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label for="serviceClass" class="form-label">Kelas Layanan</label>
+              <select class="form-select" id="serviceClass" name="serviceClass" required>
+                <option value="" disabled selected>Pilih Layanan</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label for="userType" class="form-label">Jenis Pengguna Jasa</label>
+              <select class="form-select" id="userType" name="userType" required>
+                <option value="" disabled selected>Pilih Jenis Pengguna</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label for="checkinDate" class="form-label">Jadwal Masuk Pelabuhan</label>
+              <input type="date" class="form-control" id="checkinDate" name="checkinDate" required>
+            </div>
+            <div class="col-md-6">
+              <label for="checkinTime" class="form-label">Pilih Jam</label>
+              <input type="time" class="form-control" id="checkinTime" name="checkinTime" required>
+            </div>
+            <div class="col-md-3">
+              <label for="lansia" class="form-label">Jumlah Lansia</label>
+              <input type="number" class="form-control" id="lansia" name="lansia" min="0" placeholder="0">
+            </div>
+            <div class="col-md-3">
+              <label for="dewasa" class="form-label">Jumlah Dewasa</label>
+              <input type="number" class="form-control" id="dewasa" name="dewasa" min="0" placeholder="0">
+            </div>
+            <div class="col-md-3">
+              <label for="anak" class="form-label">Jumlah Anak</label>
+              <input type="number" class="form-control" id="anak" name="anak" min="0" placeholder="0">
+            </div>
+            <div class="col-md-3">
+              <label for="bayi" class="form-label">Jumlah Bayi</label>
+              <input type="number" class="form-control" id="bayi" name="bayi" min="0" placeholder="0">
+            </div>
           </div>
-      </form>
-      </div>
+          <div class="mt-4">
+            <button type="submit" class="btn btn-primary">Cari Jadwal</button>
+          </div>
+        </form>
+      </main>
 
   </section>
   <footer id="footer">
