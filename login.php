@@ -17,8 +17,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // Verifikasi password
         if (password_verify($password, $hashed_password)) {
-            echo "Login berhasil. Selamat datang!";
-            // Anda bisa menyimpan data ke session di sini
+            // Set session atau cookie jika diperlukan
+            session_start();
+            $_SESSION['user_id'] = $id; // Menyimpan id pengguna dalam session
+            $_SESSION['email'] = $email; // Menyimpan email dalam session
+
+            // Redirect ke halaman cari.html setelah login berhasil
+            header("Location: cari.html");
+            exit(); // Menghentikan script lebih lanjut setelah redirect
         } else {
             echo "Password salah.";
         }

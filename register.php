@@ -20,7 +20,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Hash password
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-    // Simpan ke database
+    // Check if NIK already exists
+    $checkNikQuery = "SELECT COUNT(*) FROM users WHERE nik = ?";
+    $stmtCheckNik = $conn->prepare($checkNikQuery);
+    $stmtCheckNik->bind_param("s", $nik);
+    $stmtCheckNik->execute();
+    $stmtCheckNik->bind_result($nikCount);
+    $stmtCheckNik->fetch();
+    $stmtCheckNik->close();
+
+    if ($nikCount > 0) {
+        echo "Error: NIK sudah terdaftar.";
+        exit;
+    }
+
+    // Insert into database
     $stmt = $conn->prepare("INSERT INTO users (nama_lengkap, kelamin, tanggal_lahir, nik, nomer_telepon, kota_asal, email, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
     $stmt->bind_param("ssssssss", $nama_lengkap, $kelamin, $tanggal_lahir, $nik, $nomer_telepon, $kota_asal, $email, $hashed_password);
 
