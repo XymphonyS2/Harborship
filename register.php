@@ -17,8 +17,8 @@ if (!empty($_SESSION['harborship'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         .login-container {
-            min-width: 1000px;
-            max-width: 1000px;
+            min-width: 750px;
+            max-width: 750px;
             margin: 2rem auto;
             padding: 2rem;
             background: white;
@@ -95,70 +95,70 @@ if (!empty($_SESSION['harborship'])) {
     </style>
 </head>
 
-<body class="bg-light">
-    <div class="container">
-        <div class="login-container">
-            <h2 class="text-center mb-4">Daftar</h2>
-            <p class="signup-text text-center mb-4">
-                Sudah punya akun? <a href="./login.php" class="signup-link">Masuk sekarang</a>
-            </p>
+<body>
+    <div class="bg-light">
+        <div class="container">
+            <div class="login-container">
+                <h2 class="text-center mb-4">Daftar</h2>
+                <p class="signup-text text-center mb-4">
+                    Sudah punya akun? <a href="./login.html" class="signup-link">Masuk sekarang</a>
+                </p>
 
-            <form method="POST">
-                <div class="mb-3">
-                    <label class="form-label">Nama Lengkap</label>
-                    <input type="text" class="form-control" name="nama_lengkap" placeholder="Masukkan Nama Lengkap" required>
-                </div>
+                <form method="POST">
+                    <div class="mb-3">
+                        <label class="form-label">Nama Lengkap</label>
+                        <input type="text" class="form-control" name="nama_lengkap" placeholder="Masukkan Nama Lengkap" required>
+                    </div>
 
-                <div class="mb-3">
-                    <label class="form-label">Jenis Kelamin</label>
-                    <select name="kelamin" class="form-select">
-                        <option value="" hidden>Pilih jenis kelamin</option>
-                        <option value="1">Laki - Laki</option>
-                        <option value="0">Perempuan</option>
-                    </select>
-                </div>
+                    <div class="mb-3">
+                        <label class="form-label">Jenis Kelamin</label>
+                        <input type="text" class="form-control" name="kelamin" placeholder="Masukkan Jenis Kelamin" required>
+                    </div>
 
-                <div class="mb-3">
-                    <label class="form-label">Tanggal Lahir</label>
-                    <input type="date" class="form-control" name="tanggal_lahir" placeholder="Masukkan Tanggal Lahir" required>
-                </div>
+                    <div class="mb-3">
+                        <label class="form-label">Tanggal Lahir</label>
+                        <input type="date" class="form-control" name="tanggal_lahir" placeholder="Masukkan Tanggal Lahir" required>
+                    </div>
 
-                <div class="mb-3">
-                    <label class="form-label">Nomer Induk Kependudukan</label>
-                    <input type="text" class="form-control" name="nik" placeholder="Masukkan Nomer Induk Kependudukan" required>
-                </div>
+                    <div class="mb-3">
+                        <label class="form-label">Nomer Induk Kependudukan</label>
+                        <input type="text" class="form-control" name="nik" placeholder="Masukkan Nomer Induk Kependudukan" required>
+                    </div>
 
-                <div class="mb-3">
-                    <label class="form-label">Nomer Telepon</label>
-                    <input type="text" class="form-control" name="nomer_telepon" placeholder="Masukkan Nomer Telepon" required>
-                </div>
+                    <div class="mb-3">
+                        <label class="form-label">Nomer Telepon</label>
+                        <input type="text" class="form-control" name="nomer_telepon" placeholder="Masukkan Nomer Telepon" required>
+                    </div>
 
-                <div class="mb-3">
-                    <label class="form-label">Kota Asal</label>
-                    <input type="text" class="form-control" name="kota_asal" placeholder="Masukkan Kota Asal" required>
-                </div>
+                    <div class="mb-3">
+                        <label class="form-label">Kota Asal</label>
+                        <input type="text" class="form-control" name="kota_asal" placeholder="Masukkan Kota Asal" required>
+                    </div>
 
-                <div class="mb-3">
-                    <label class="form-label">Email</label>
-                    <input type="email" class="form-control" name="email" placeholder="Email" required>
-                </div>
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control" name="email" placeholder="Email" required>
+                    </div>
 
-                <div class="mb-3">
-                    <label class="form-label">Password</label>
-                    <input type="password" class="form-control" name="password" placeholder="Password" required>
-                    <div class="form-text">Minimal berisi 8 karakter, mengandung huruf kecil, huruf besar dan angka</div>
-                </div>
+                    <div class="mb-3">
+                        <label class="form-label">Password</label>
+                        <input type="password" class="form-control" name="password" placeholder="Password" required>
+                        <div class="form-text">Minimal berisi 8 karakter, mengandung huruf kecil, huruf besar dan angka</div>
+                    </div>
 
-                <div class="mb-3">
-                    <label class="form-label">Konfirmasi Password</label>
-                    <input type="password" class="form-control" name="confirm_password" placeholder="Konfirmasi Password" required>
-                </div>
+                    <div class="mb-3">
+                        <label class="form-label">Konfirmasi Password</label>
+                        <input type="password" class="form-control" name="confirm_password" placeholder="Konfirmasi Password" required>
+                    </div>
 
-                <div class="form-text" style="text-align: center;">Dengan mengklik tombol dibawah ini, saya setuju dengan Kebijakan Privasi serta Syarat & Ketentuan Harborship</div>
+                    <div class="mb-3 text-end">
+                        <div class="form-text" style="text-align: center; font-size: small;">Dengan mengklik tombol dibawah ini, saya setuju dengan Kebijakan Privasi serta Syarat & Ketentuan Harborship</div>
+                    </div>
 
-                <button type="submit" class="btn masuk-btn text-white">Daftar</button>
-            </form>
+                    <button type="submit" class="btn masuk-btn text-white">Daftar</button>
+                </form>
 
+            </div>
         </div>
     </div>
 

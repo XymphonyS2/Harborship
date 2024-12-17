@@ -25,7 +25,8 @@ if (!empty($_SESSION['harborship'])) {
         }
 
         .login-container {
-            min-width: 600px;
+            min-width: 500px;
+            max-width: 500px;
             margin: 2rem auto;
             padding: 2rem;
             background: white;
@@ -65,35 +66,33 @@ if (!empty($_SESSION['harborship'])) {
     </style>
 </head>
 
-<body class="bg-light">
-
-    <div class="d-flex flex-column align-items-center w-100 mx-auto p-4">
-        <!-- Logo -->
-
-        <img
-            src="./assets/img/ProyekBaru.svg"
-            alt="logo"
-            class="mb-4"
-            style="max-width: 200px; width: 100%;" />
+<body">
+    <div class="bg-light">
+        <div class="d-flex flex-column align-items-center w-100 mx-auto p-4 justify-content-center mt-4" style="background: white;
+">
+            <img src="./assets/img/ProyekBaru.svg" alt="logo" style="max-width: 200px; width: 100%;" />
+        </div>
     </div>
 
     <div class="container">
         <div class="login-container">
             <h2 class="text-center mb-4">Masuk</h2>
             <p class="signup-text text-center mb-4">
-                Belum punya akun? <a href="./register.php" class="signup-link">Daftar sekarang</a>
+                Belum punya akun? <a href="./register.html" class="signup-link">Daftar sekarang</a>
             </p>
 
             <form method="POST">
                 <div class="mb-3">
                     <label for="email" class="form-label">Alamat Email</label>
-                    <input type="email" class="form-control" name="email" id="email" placeholder="Alamat Email" required>
-                    <div class="form-text">cth. example@email.com</div>
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Alamat Email"
+                        required>
+                    <div class="form-text">contoh harborship@hotmail.com</div>
                 </div>
 
                 <div class="mb-3">
                     <label for="password" class="form-label">Kata Sandi</label>
-                    <input type="password" class="form-control" name="password" id="password" placeholder="Kata Sandi" required>
+                    <input type="password" class="form-control" name="password" id="password" placeholder="Kata Sandi"
+                        required>
                 </div>
 
                 <div class="mb-3 text-end">
@@ -110,6 +109,6 @@ if (!empty($_SESSION['harborship'])) {
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Font Awesome -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
-</body>
+        </body>
 
 </html>
