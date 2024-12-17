@@ -1,38 +1,115 @@
 <?php
-require 'koneksi.php';
+require_once "./actions/c-login.php";
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-
-    // Cari pengguna berdasarkan email
-    $stmt = $conn->prepare("SELECT id, password FROM users WHERE email = ?");
-    $stmt->bind_param("s", $email);
-    $stmt->execute();
-    $stmt->store_result();
-
-    if ($stmt->num_rows > 0) {
-        $stmt->bind_result($id, $hashed_password);
-        $stmt->fetch();
-
-        // Verifikasi password
-        if (password_verify($password, $hashed_password)) {
-            // Set session atau cookie jika diperlukan
-            session_start();
-            $_SESSION['user_id'] = $id; // Menyimpan id pengguna dalam session
-            $_SESSION['email'] = $email; // Menyimpan email dalam session
-
-            // Redirect ke halaman cari.html setelah login berhasil
-            header("Location: cari.html");
-            exit(); // Menghentikan script lebih lanjut setelah redirect
-        } else {
-            echo "Password salah.";
-        }
-    } else {
-        echo "Email tidak ditemukan.";
-    }
-
-    $stmt->close();
-    $conn->close();
+if (!empty($_SESSION['harborship'])) {
+    header('location: cari.php');
 }
 ?>
+
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masuk</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .login-container {
+            min-width: 600px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .masuk-btn {
+            background-color: #ffc107;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            font-weight: 500;
+            color: white !important;
+        }
+
+        .masuk-btn:hover {
+            background-color: #ffb300;
+            color: white !important;
+        }
+
+        .forgot-password {
+            color: #757575;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .signup-text {
+            color: #757575;
+            font-size: 14px;
+        }
+
+        .signup-link {
+            color: #0d6efd;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body class="bg-light">
+
+    <div class="d-flex flex-column align-items-center w-100 mx-auto p-4">
+        <!-- Logo -->
+
+        <img
+            src="./assets/img/ProyekBaru.svg"
+            alt="logo"
+            class="mb-4"
+            style="max-width: 200px; width: 100%;" />
+    </div>
+
+    <div class="container">
+        <div class="login-container">
+            <h2 class="text-center mb-4">Masuk</h2>
+            <p class="signup-text text-center mb-4">
+                Belum punya akun? <a href="./register.php" class="signup-link">Daftar sekarang</a>
+            </p>
+
+            <form method="POST">
+                <div class="mb-3">
+                    <label for="email" class="form-label">Alamat Email</label>
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Alamat Email" required>
+                    <div class="form-text">cth. example@email.com</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="password" class="form-label">Kata Sandi</label>
+                    <input type="password" class="form-control" name="password" id="password" placeholder="Kata Sandi" required>
+                </div>
+
+                <div class="mb-3 text-end">
+                    <a href="#" class="forgot-password">Lupa Kata Sandi?</a>
+                </div>
+
+                <button type="submit" class="btn masuk-btn text-white">MASUK</button>
+            </form>
+        </div>
+
+
+
+        <!-- Bootstrap Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Font Awesome -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+</body>
+
+</html>
