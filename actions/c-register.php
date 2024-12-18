@@ -6,45 +6,35 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $kelamin = $_POST['kelamin'];
     $tanggal_lahir = $_POST['tanggal_lahir'];
     $nik = $_POST['nik'];
-    $nomer_telepon = $_POST['nomer_telepon'];
+    $nomor_telepon = $_POST['nomor_telepon'];
     $kota_asal = $_POST['kota_asal'];
     $email = $_POST['email'];
     $password = $_POST['password'];
-    $confirm_password = $_POST['confirm_password'];
+    $konfirmasi_password = $_POST['konfirmasi_password'];
 
     // Validasi password
-    if ($password !== $confirm_password) {
+    if ($password !== $konfirmasi_password) {
         die("Password dan Konfirmasi Password tidak cocok.");
     }
 
     // Hash password
-    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+    $hashed_password = password_hash($konfirmasi_password, PASSWORD_DEFAULT);
 
     // Check if NIK already exists
-    $checkNikQuery = "SELECT COUNT(*) FROM users WHERE nik = ?";
-    $stmtCheckNik = $conn->prepare($checkNikQuery);
-    $stmtCheckNik->bind_param("s", $nik);
-    $stmtCheckNik->execute();
-    $stmtCheckNik->bind_result($nikCount);
-    $stmtCheckNik->fetch();
-    $stmtCheckNik->close();
+    $checkNikQuery = query("SELECT COUNT(*) as row FROM user WHERE nik = '$nik'");
+    $nikCount = fetch($checkNikQuery);
 
-    if ($nikCount > 0) {
-        echo "Error: NIK sudah terdaftar.";
-        exit;
+    if ($nikCount['row'] > 0) {
+        alert_harbor("success", "Registrasi Gagal!", "NIK Sudah Terdaftar");
     }
 
     // Insert into database
-    $stmt = $conn->prepare("INSERT INTO users (nama_lengkap, kelamin, tanggal_lahir, nik, nomer_telepon, kota_asal, email, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("ssssssss", $nama_lengkap, $kelamin, $tanggal_lahir, $nik, $nomer_telepon, $kota_asal, $email, $hashed_password);
+    $query = query("INSERT INTO user (nama_lengkap, kelamin, tanggal_lahir, nik, nomor_telepon, kota_asal, email, password) VALUES ('$nama_lengkap', '$kelamin', '$tanggal_lahir', '$nik', '$nomor_telepon', '$kota_asal', '$email', '$hashed_password')");
 
-    if ($stmt->execute()) {
-        echo "Registrasi berhasil. <a href='login.html'>Login di sini</a>";
+    if ($query !== false) {
+        alert_harbor("success", "Registrasi Berhasil!", "");
+        header("Location: login.php");
     } else {
-        echo "Error: " . $stmt->error;
+        alert_harbor("success", "Registrasi Gagal!", "");
     }
-
-    $stmt->close();
-    $conn->close();
 }
-?>

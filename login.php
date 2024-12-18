@@ -15,6 +15,7 @@ if (!empty($_SESSION['harborship'])) {
     <title>Masuk</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.css">
     <style>
         html,
         body {
@@ -108,6 +109,22 @@ if (!empty($_SESSION['harborship'])) {
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Font Awesome -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+        <script src="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.min.js"></script>
+        <?php
+        if (isset($_SESSION['sweet_harbor']['trigger'])) {
+        ?>
+            <script>
+                swal({
+                    type: "<?= $_SESSION['sweet_harbor']['trigger'] ?>",
+                    title: "<?= $_SESSION['sweet_harbor']['title'] ?>",
+                    text: "<?= $_SESSION['sweet_harbor']['text'] ?>",
+                    confirmButtonText: "Okay"
+                });
+            </script>
+        <?php
+            unset($_SESSION['sweet_harbor']);
+        }
+        ?>
         </body>
 
 </html>

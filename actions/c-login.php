@@ -19,6 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             if (!empty($_SESSION['harborship'])) {
                 // Redirect ke halaman cari.html setelah login berhasil
                 alert_harbor("success", "Login Berhasil!", "Selamat Datang, " . $_SESSION['harborship']['nama_lengkap']);
+                header("location: index.php");
             } else {
                 echo 'abcd';
             }
