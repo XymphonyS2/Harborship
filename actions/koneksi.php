@@ -22,4 +22,15 @@ if ($conn->connect_error) {
     {
         return mysqli_num_rows($statement);
     }
+
+    function myData($statement)
+    {
+        return $_SESSION['harborship'][$statement];
+    }
+
+    function alert_harbor($trigger, $title, $text) {
+        $_SESSION['sweet_harbor']['trigger'] = $trigger;
+        $_SESSION['sweet_harbor']['title'] = $title;
+        $_SESSION['sweet_harbor']['text'] = $text;
+    }
 }
