@@ -22,4 +22,9 @@ if ($conn->connect_error) {
     {
         return mysqli_num_rows($statement);
     }
+
+    function myData($statement)
+    {
+        return $_SESSION['harborship'][$statement];
+    }
 }

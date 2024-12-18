@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // Set session
             if (!empty($_SESSION['harborship'])) {
                 // Redirect ke halaman cari.html setelah login berhasil
-                header("Location: cari.php");
+                header("Location: index.php");
             } else {
                 echo 'abcd';
             }

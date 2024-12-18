@@ -68,8 +68,7 @@ if (!empty($_SESSION['harborship'])) {
 
 <body">
     <div class="bg-light">
-        <div class="d-flex flex-column align-items-center w-100 mx-auto p-4 justify-content-center mt-4" style="background: white;
-">
+        <div class="d-flex flex-column align-items-center w-100 mx-auto p-4 justify-content-center mt-4" style="background: white;">
             <img src="./assets/img/ProyekBaru.svg" alt="logo" style="max-width: 200px; width: 100%;" />
         </div>
     </div>
@@ -78,7 +77,7 @@ if (!empty($_SESSION['harborship'])) {
         <div class="login-container">
             <h2 class="text-center mb-4">Masuk</h2>
             <p class="signup-text text-center mb-4">
-                Belum punya akun? <a href="./register.html" class="signup-link">Daftar sekarang</a>
+                Belum punya akun? <a href="./register.php" class="signup-link">Daftar sekarang</a>
             </p>
 
             <form method="POST">
