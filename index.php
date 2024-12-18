@@ -40,8 +40,8 @@ $page = empty($_GET['page']) ? "cari" : $_GET['page'];
     <link rel="stylesheet" href="./assets/css/port.css" />
     <link rel="stylesheet" href="./assets/css/syarat/syarat.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" media="screen"
-        href="https://assets.awwwards.com/assets/redesign/css/home.css?v=1.99" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://assets.awwwards.com/assets/redesign/css/home.css?v=1.99" />
+    <link rel="stylesheet" type="text/css" href="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.css">
 </head>
 
 <body class="has-header-above has-content-header">
@@ -141,6 +141,22 @@ $page = empty($_GET['page']) ? "cari" : $_GET['page'];
         <script src="https://assets.awwwards.com/dist/js/9521.4ec1ad74.js" defer></script>
         <script src="https://assets.awwwards.com/dist/js/9805.824771e4.js" defer></script>
         <script src="https://assets.awwwards.com/dist/js/home_homepage.4831587d.js" defer></script>
+        <script src="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.min.js"></script>
+        <?php
+        if (isset($_SESSION['sweet_harbor']['trigger'])) {
+        ?>
+            <script>
+                swal({
+                    type: "<?= $_SESSION['sweet_harbor']['trigger'] ?>",
+                    title: "<?= $_SESSION['sweet_harbor']['title'] ?>",
+                    text: "<?= $_SESSION['sweet_harbor']['text'] ?>",
+                    confirmButtonText: "Okay"
+                });
+            </script>
+        <?php
+            unset($_SESSION['sweet_harbor']);
+        }
+        ?>
 
 
 </body>

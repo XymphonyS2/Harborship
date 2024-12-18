@@ -2,7 +2,7 @@
 require_once "./actions/c-login.php";
 
 if (!empty($_SESSION['harborship'])) {
-    header('location: cari.php');
+    header('location: index.php');
 }
 ?>
 

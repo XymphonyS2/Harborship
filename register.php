@@ -2,7 +2,7 @@
 require_once "./actions/c-register.php";
 
 if (!empty($_SESSION['harborship'])) {
-    header('location: cari.php');
+    header('location: index.php');
 }
 ?>
 
@@ -102,33 +102,33 @@ if (!empty($_SESSION['harborship'])) {
 
                 <div class="mb-3">
                     <label class="form-label">Nomer Induk Kependudukan</label>
-                    <input type="text" class="form-control" name="nik" placeholder="Masukkan Nomer Induk Kependudukan" required>
+                    <input type="text" class="form-control" name="nik" placeholder="Masukkan NIK" required>
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label">Nomer Telepon</label>
-                    <input type="text" class="form-control" name="nomer_telepon" placeholder="Masukkan Nomer Telepon" required>
+                    <input type="text" class="form-control" name="nomor_telepon" placeholder="Masukkan Nomer Telepon" required>
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label">Kota Asal</label>
-                    <input type="text" class="form-control" name="kota_asal" placeholder="Masukkan Kota Asal" required>
+                    <input type="text" class="form-control" name="kota_asal" placeholder="Masukkan Alamat Kota Asal" required>
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label">Email</label>
-                    <input type="email" class="form-control" name="email" placeholder="Email" required>
+                    <input type="email" class="form-control" name="email" placeholder="Masukkan Email" required>
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label">Password</label>
-                    <input type="password" class="form-control" name="password" placeholder="Password" required>
+                    <input type="password" class="form-control" name="password" placeholder="Masukkan Password Anda" required>
                     <div class="form-text">Minimal berisi 8 karakter, mengandung huruf kecil, huruf besar dan angka</div>
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label">Konfirmasi Password</label>
-                    <input type="password" class="form-control" name="confirm_password" placeholder="Konfirmasi Password" required>
+                    <input type="password" class="form-control" name="konfirmasi_password" placeholder="Konfirmasi Password Anda" required>
                 </div>
 
                 <div class="mb-3 text-end">
