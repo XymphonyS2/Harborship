@@ -98,7 +98,8 @@
     <h4 class="mb-4">List Tiket</h4>
 
     <!-- table -->
-     
+     <!--                                              |     jumlahasodaksdkn         |        -->
+     <!-- no | asal | tujuan | kelas | jenis | jadwal | lansia | dewasa | anak | bayi |        -->
     
   </div>
 </main>
