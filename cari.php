@@ -97,9 +97,68 @@
   <div class="search-container" style="padding-left: 20px; padding-right: 20px; padding-top: 10px; padding-bottom: 10px;">
     <h4 class="mb-4">List Tiket</h4>
 
+    <div class="table-container">
+            <table class="table table-striped mb-0">
+                <thead>
+                    <tr>
+                        <th scope="col" rowspan="1">No</th>
+                        <th scope="col" rowspan="1">Asal</th>
+                        <th scope="col" rowspan="1">Tujuan</th>
+                        <th scope="col" rowspan="1">Kelas</th>
+                        <th scope="col" rowspan="1">Jenis</th>
+                        <th scope="col" rowspan="1">Jadwal</th>
+                        <th scope="col" colspan="4" class="text-center">Jumlah Penumpang</th>
+                        <th scope="col" rowspan="1">Jadwal</th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th scope="col">Lansia</th>
+                        <th scope="col">Dewasa</th>
+                        <th scope="col">Anak</th>
+                        <th scope="col">Bayi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Jakarta</td>
+                        <td>Surabaya</td>
+                        <td>Ekonomi</td>
+                        <td>Bus</td>
+                        <td>08:00</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td><button class="btn btn-primary">Pilih</button></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Bandung</td>
+                        <td>Semarang</td>
+                        <td>Eksekutif</td>
+                        <td>Kereta</td>
+                        <td>10:30</td>
+                        <td>0</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>1</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
     <!-- table -->
-     <!--                                              |     jumlahasodaksdkn         |        -->
-     <!-- no | asal | tujuan | kelas | jenis | jadwal | lansia | dewasa | anak | bayi |        -->
+    <!-- no | asal | tujuan | kelas | jenis | jadwal | lansia | dewasa | anak | bayi |        -->
+    <!--                                              |     jumlahasodaksdkn         |        -->
+
     
   </div>
 </main>
