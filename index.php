@@ -1,11 +1,10 @@
 <?php
-require_once "./actions/c-cari.php";
+$page = empty($_GET['page']) ? "cari" : $_GET['page'];
+require_once "./actions/c-" . $page . ".php";
 
 if (empty($_SESSION['harborship'])) {
     header('location: login.php');
 }
-
-$page = empty($_GET['page']) ? "cari" : $_GET['page'];
 ?>
 
 <!DOCTYPE html>
@@ -59,7 +58,7 @@ $page = empty($_GET['page']) ? "cari" : $_GET['page'];
                             </a>
                             <div class="header-main__right" style="text-align: right;">
                                 <div class="header-main__user">
-                                    <strong class="header-main__link hidden-sm"><a href="./logout.php"><?= $_SESSION['harborship']['nama_lengkap'] ?></a></strong>
+                                    <strong class="header-main__link hidden-sm"><a style="text-decoration: none; color: black;" href="./logout.php"><?= $_SESSION['harborship']['nama_lengkap'] ?></a></strong>
                                 </div>
                             </div>
                         </div>
@@ -70,7 +69,7 @@ $page = empty($_GET['page']) ? "cari" : $_GET['page'];
 
         <section id="content" style="padding-bottom: -20%;">
             <div class="anchor-section" id="sotd">
-                <div class="content-header" style="padding-bottom: 5px"></div>
+                <div class="content-header" style="padding-bottom: 5px"><?= $_SESSION['sweet_harbor']['trigger'] ?></div>
             </div>
 
             <?php
@@ -154,11 +153,9 @@ $page = empty($_GET['page']) ? "cari" : $_GET['page'];
                 });
             </script>
         <?php
-            unset($_SESSION['sweet_harbor']);
+            // unset($_SESSION['sweet_harbor']);
         }
         ?>
-
-
 </body>
 
 </html>
