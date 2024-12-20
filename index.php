@@ -44,6 +44,7 @@ if (empty($_SESSION['harborship'])) {
     <link rel="stylesheet" href="./assets/css/port.css" />
     <link rel="stylesheet" href="./assets/css/syarat/syarat.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <!-- <link rel="stylesheet" type="text/css" media="screen" href="https://assets.awwwards.com/assets/redesign/css/home.css?v=1.99" /> -->
     <link rel="stylesheet" type="text/css" href="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.css">
 </head>
@@ -57,13 +58,30 @@ if (empty($_SESSION['harborship'])) {
                 <div class="c-header-main">
                     <div class="header-main" data-search-target="headerMain">
                         <div class="header-main__container" style="justify-content: space-between; ">
-                            <a href="/" class="header-main__logo" aria-label="Awwwards"
+                            <a href="./index.php" class="header-main__logo" aria-label="Awwwards"
                                 style="width: 10%; height: 10%; margin-top: -50px;">
                                 <img src="./assets/img/ProyekBaru.svg" alt="logo">
                             </a>
-                            <div class="header-main__right" style="text-align: right;">
+                            <a href="javascript:history.back()" class="btn btn-outline-secondary" aria-label="Back" style="margin-right: 20px;">
+                                <i class="bi bi-arrow-left"></i>
+                            </a>
+                            <a href="javascript:history.forward()" class="btn btn-outline-secondary" aria-label="Back" style="margin-right: 20px;">
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                            <div class="header-main__right text-end">
                                 <div class="header-main__user">
-                                    <strong class="header-main__link hidden-sm"><a style="text-decoration: none; color: black;" href="./logout.php"><?= $_SESSION['harborship']['nama_lengkap'] ?></a></strong>
+                                    <div class="dropdown">
+                                        <span class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <?= myData('nama_lengkap') ?>
+                                        </span>
+
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                            <li><a class="dropdown-item <?= $page == "cari" ? "active" : "" ?>" href="./?page=cari" >Cari Tiket</a></li>
+                                            <li><a class="dropdown-item <?= $page == "profile" ? "active" : "" ?>" href="./?page=profile" >Tiket Anda</a></li>
+                                            <li><a class="dropdown-item <?= $page == "editprofile" ? "active" : "" ?>" href="./?page=editprofile" >Edit Profile</a></li>
+                                            <li><a class="dropdown-item" href="./logout.php" >Logout</a></li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -138,6 +156,7 @@ if (empty($_SESSION['harborship'])) {
                 </div>
             </div>
         </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
         <script src="https://assets.awwwards.com/dist/js/runtime.d9fe9b44.js" defer></script>
         <script src="https://assets.awwwards.com/dist/js/5716.3c7fee44.js" defer></script>
         <script src="https://assets.awwwards.com/dist/js/188.68d847a8.js" defer></script>

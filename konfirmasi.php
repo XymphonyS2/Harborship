@@ -1,6 +1,5 @@
 <?php
 require './actions/koneksi.php';
-require './actions/c-konfirmasi.php';
 
 $tiket = isset($_GET['t']) ? intval($_GET['t']) : 0;
 $jumlah[1][0] = isset($_GET['l']) ? intval($_GET['l']) : 0;
@@ -121,7 +120,7 @@ while ($data_harga_penumpang = fetch($query_harga_penumpang)) {
                     <input type="hidden" name="dewasa" value="<?= $jumlah[1][1] ?>">
                     <input type="hidden" name="anak" value="<?= $jumlah[1][2] ?>">
                     <input type="hidden" name="bayi" value="<?= $jumlah[1][3] ?>">
-                    <button class="btn btn-primary w-100 mt-3" style="margin-bottom: 25px;">LANJUTKAN PEMBAYARAN</button>
+                    <a class="btn btn-primary w-100 mt-3" href="./pembayaran.php?l=<?= $jumlah[1][0] ?>&d=<?= $jumlah[1][1] ?>&a=<?= $jumlah[1][2] ?>&b=<?= $jumlah[1][3] ?>&t=<?= $tiket ?>" style="margin-bottom: 25px;">LANJUTKAN PEMBAYARAN</a>
                 </form>
             </div>
 

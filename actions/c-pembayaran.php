@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $query_masukkan_penumpang = query("INSERT INTO penumpang SET lansia='$lansia', dewasa='$dewasa', anak='$anak', bayi='$bayi', id_tiket='$id_tiket', id_user='$id_user' ");
     if ($query_masukkan_penumpang !== false) {
         alert_harbor("success", "Pembelian Tiket Berhasil!", "");
-        header("location: index.php");
+        header("location: ./?page=profile");
     } else {
         alert_harbor("error", "Pembelian Tiket Gagal!", "");
     }

@@ -1,10 +1,43 @@
+<?php
+require './actions/koneksi.php';
+require './actions/c-pembayaran.php';
+
+$tiket = isset($_GET['t']) ? intval($_GET['t']) : 0;
+$jumlah[1][0] = isset($_GET['l']) ? intval($_GET['l']) : 0;
+$jumlah[1][1] = isset($_GET['d']) ? intval($_GET['d']) : 0;
+$jumlah[1][2] = isset($_GET['a']) ? intval($_GET['a']) : 0;
+$jumlah[1][3] = isset($_GET['b']) ? intval($_GET['b']) : 0;
+
+$jumlah[0][0] = "Lansia";
+$jumlah[0][1] = "Dewasa";
+$jumlah[0][2] = "Anak";
+$jumlah[0][3] = "Bayi";
+
+$query_harga_penumpang = query("SELECT * FROM harga_penumpang");
+
+$no = 0;
+while ($data_harga_penumpang = fetch($query_harga_penumpang)) {
+    $jumlah[2][$no++] = $data_harga_penumpang['harga_penumpang'];
+}
+
+$total_semua = 0;
+for ($i = 0; $i < 4; $i++) {
+    if ($jumlah[1][$i] != 0) {
+        $total = $jumlah[2][$i] * $jumlah[1][$i];
+        $total_semua += $total;
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Informasi Pemesanan</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.css">
     <style>
         .bank-option {
             padding: 15px;
@@ -16,17 +49,17 @@
             justify-content: space-between;
             cursor: pointer;
         }
-        
+
         .bank-logo {
             width: 24px;
             height: 24px;
             margin-right: 10px;
         }
-        
+
         .payment-section {
             background-color: #fff;
             border-radius: 12px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             padding: 20px;
             margin-bottom: 20px;
         }
@@ -78,19 +111,20 @@
         }
     </style>
 </head>
+
 <body class="bg-light">
     <div class="container mb-5 pb-5">
         <div class="payment-section mt-4">
             <h5 class="mb-4">Informasi Pemesanan</h5>
-            
+
             <div class="payment-header">
                 <span>Nomor Transaksi</span>
-                <span>W00243550077704</span>
+                <span>W000<?= $tiket ?></span>
             </div>
-            
+
             <div class="payment-header">
                 <span>Nominal Transaksi</span>
-                <span>Rp 84.800</span>
+                <span>Rp <?= number_format($total_semua, 0, ",", ".") ?></span>
             </div>
 
             <div class="mt-3">
@@ -149,7 +183,7 @@
     <div class="total-payment">
         <div class="container">
             <div class=" align-items-center">
-                <button class="pay-button">BAYAR</button>
+                <button onclick="window.location.href='struk.php?l=<?= $jumlah[1][0] ?>&d=<?= $jumlah[1][1] ?>&a=<?= $jumlah[1][2] ?>&b=<?= $jumlah[1][3] ?>&t=<?= $tiket ?>';" class="pay-button">BAYAR</button>
             </div>
         </div>
     </div>
@@ -167,7 +201,7 @@
         function toggleVirtualAccount() {
             const options = document.getElementById('virtualAccountOptions');
             const chevron = event.currentTarget.querySelector('.chevron');
-            
+
             if (options.style.display === 'none') {
                 options.style.display = 'block';
                 chevron.classList.add('expanded');
@@ -183,7 +217,7 @@
                 document.querySelectorAll('input[name="bank"]').forEach(radio => {
                     radio.checked = false;
                 });
-                
+
                 // Check the clicked option's radio button
                 const radio = this.querySelector('input[type="radio"]');
                 radio.checked = true;
@@ -191,4 +225,5 @@
         });
     </script>
 </body>
+
 </html>
