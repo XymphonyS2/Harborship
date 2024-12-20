@@ -10,12 +10,6 @@ if (!isset($_POST['cari']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($lansia <= 0 && $dewasa <= 0 && $anak <= 0 && $bayi <= 0) {
         alert_harbor("error", "Pemilihan Gagal!", "Mohon Masukkan Berapa Penumpang!");
     } else {
-        header("location: konfirmasi.php?l='$lansia'&d='$dewasa'&a='$anak'&b='$bayi'");
+        header("location: konfirmasi.php?l=$lansia&d=$dewasa&a=$anak&b=$bayi&t=$id_tiket");
     }
-    // $query_masukkan_penumpang = query("INSERT INTO penumpang SET lansia='$lansia', dewasa='$dewasa', anak='$anak', bayi='$bayi', id_tiket='$id_tiket' ");
-    // if ($query_masukkan_penumpang !== false) {
-    //     alert_harbor("success", "Pembelian Tiket Berhasil!", "");
-    // } else {
-    //     alert_harbor("error", "Pembelian Tiket Gagal!", "");
-    // }
 }

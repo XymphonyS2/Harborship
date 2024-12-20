@@ -2,14 +2,28 @@
 require './actions/koneksi.php';
 require './actions/c-konfirmasi.php';
 
-$lansia = isset($_GET['l']) ? $_GET['l'] : 0;
-$dewasa = isset($_GET['d']) ? $_GET['d'] : 0;
-$anak = isset($_GET['a']) ? $_GET['a'] : 0;
-$bayi = isset($_GET['b']) ? $_GET['b'] : 0;
+$tiket = isset($_GET['t']) ? intval($_GET['t']) : 0;
+$jumlah[1][0] = isset($_GET['l']) ? intval($_GET['l']) : 0;
+$jumlah[1][1] = isset($_GET['d']) ? intval($_GET['d']) : 0;
+$jumlah[1][2] = isset($_GET['a']) ? intval($_GET['a']) : 0;
+$jumlah[1][3] = isset($_GET['b']) ? intval($_GET['b']) : 0;
+
+$jumlah[0][0] = "Lansia";
+$jumlah[0][1] = "Dewasa";
+$jumlah[0][2] = "Anak";
+$jumlah[0][3] = "Bayi";
+
+$query_harga_penumpang = query("SELECT * FROM harga_penumpang");
+
+$no = 0;
+while ($data_harga_penumpang = fetch($query_harga_penumpang)) {
+    $jumlah[2][$no++] = $data_harga_penumpang['harga_penumpang'];
+}
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,16 +42,19 @@ $bayi = isset($_GET['b']) ? $_GET['b'] : 0;
             justify-content: space-between;
             margin-bottom: 10px;
         }
+
         .total-price {
             border-top: 1px solid #dee2e6;
             padding-top: 10px;
             margin-top: 10px;
         }
+
         .text-orange {
             color: #000000;
         }
     </style>
 </head>
+
 <body>
     <div class="container mt-4">
         <div class="row">
@@ -45,22 +62,33 @@ $bayi = isset($_GET['b']) ? $_GET['b'] : 0;
             <div class="col-md-7">
                 <div class="order-box">
                     <h5 class="mb-4">Rincian Harga</h5>
-                    
-                    <div class="price-row">
-                        <div>
-                            <span>Dewasa (1 x Rp22.700)  <?= $lansia ?></span>
-                        </div>
-                        <div>
-                            <span>Rp22.700</span>
-                        </div>
-                    </div>
+
+                    <?php
+                    $total_semua = 0;
+                    for ($i = 0; $i < 4; $i++) {
+                        if ($jumlah[1][$i] != 0) {
+                            $total = $jumlah[2][$i] * $jumlah[1][$i];
+                            $total_semua += $total;
+                    ?>
+                            <div class="price-row">
+                                <div>
+                                    <span><?= $jumlah[0][$i] ?> (<?= $jumlah[1][$i] ?> x Rp<?= number_format($jumlah[2][$i], 0, ",", ".") ?>)</span>
+                                </div>
+                                <div>
+                                    <span>Rp<?= number_format($total, 0, ",", ".") ?></span>
+                                </div>
+                            </div>
+                    <?php
+                        }
+                    }
+                    ?>
 
                     <div class="price-row total-price">
                         <div>
                             <strong>Total Pembayaran</strong>
                         </div>
                         <div>
-                            <strong class="text-orange">Rp22.700</strong>
+                            <strong class="text-orange">Rp<?= number_format($total_semua, 0, ",", ".") ?></strong>
                         </div>
                     </div>
                 </div>
@@ -76,40 +104,46 @@ $bayi = isset($_GET['b']) ? $_GET['b'] : 0;
                 </div>
 
                 <div class="container">
-                  <h5>Kebijakan Pelabuhan</h5>
-                  <ul class="policy-list" style="margin-bottom: -5px;">
-                      <li class="mb-2">Kendaraan <strong>Over Dimension</strong> dan <strong>Over Loading (ODOL)</strong> tidak diperkenankan memasuki area pelabuhan;</li>
-                      <li class="mb-2">Anda sudah dapat <strong>Masuk Pelabuhan (Check In)</strong> mulai dari 2 (dua) jam sebelum Jadwal Masuk Pelabuhan yang Anda pilih;</li>
-                      <li class="mb-2">Tiket akan hangus (<strong>expired</strong>) apabila Anda belum Masuk Pelabuhan (Check In) hingga melewati batas waktu Jadwal Masuk Pelabuhan yang Anda pilih;</li>
-                      <li class="mb-2">Nama Penumpang harus sesuai dengan Kartu Identitas (KTP/SIM/Passport/DII);</li>
-                      <li class="mb-2">Jumlah Penumpang dan Nomor Polisi Kendaraan harus sesuai dengan Jumlah Penumpang dan Nomor Polisi Kendaraan yang akan <strong>menyeberang</strong>;</li>
-                      <li class="mb-2">Jadwal dan nama kapal keberangkatan dapat berubah sewaktu-waktu mengikuti kondisi cuaca dan operasional pelabuhan tanpa pemberitahuan terlebih dahulu.</li>
-                  </ul>
-              </div>
-                <button class="btn btn-primary w-100 mt-3" style="margin-bottom: 5px;">CARI JADWAL LAIN</button>
-
-                <button class="btn btn-primary w-100 mt-3" style="margin-bottom: 25px;">LANJUTKAN PEMBAYARAN</button>
+                    <h5>Kebijakan Pelabuhan</h5>
+                    <ul class="policy-list" style="margin-bottom: -5px;">
+                        <li class="mb-2">Kendaraan <strong>Over Dimension</strong> dan <strong>Over Loading (ODOL)</strong> tidak diperkenankan memasuki area pelabuhan;</li>
+                        <li class="mb-2">Anda sudah dapat <strong>Masuk Pelabuhan (Check In)</strong> mulai dari 2 (dua) jam sebelum Jadwal Masuk Pelabuhan yang Anda pilih;</li>
+                        <li class="mb-2">Tiket akan hangus (<strong>expired</strong>) apabila Anda belum Masuk Pelabuhan (Check In) hingga melewati batas waktu Jadwal Masuk Pelabuhan yang Anda pilih;</li>
+                        <li class="mb-2">Nama Penumpang harus sesuai dengan Kartu Identitas (KTP/SIM/Passport/DII);</li>
+                        <li class="mb-2">Jumlah Penumpang dan Nomor Polisi Kendaraan harus sesuai dengan Jumlah Penumpang dan Nomor Polisi Kendaraan yang akan <strong>menyeberang</strong>;</li>
+                        <li class="mb-2">Jadwal dan nama kapal keberangkatan dapat berubah sewaktu-waktu mengikuti kondisi cuaca dan operasional pelabuhan tanpa pemberitahuan terlebih dahulu.</li>
+                    </ul>
+                </div>
+                <a class="btn btn-primary w-100 mt-3" href="./index.php" style="margin-bottom: 5px;">CARI JADWAL LAIN</a>
+                <form method="POST">
+                    <input type="hidden" name="id_tiket" value="<?= $tiket ?>">
+                    <input type="hidden" name="lansia" value="<?= $jumlah[1][0] ?>">
+                    <input type="hidden" name="dewasa" value="<?= $jumlah[1][1] ?>">
+                    <input type="hidden" name="anak" value="<?= $jumlah[1][2] ?>">
+                    <input type="hidden" name="bayi" value="<?= $jumlah[1][3] ?>">
+                    <button class="btn btn-primary w-100 mt-3" style="margin-bottom: 25px;">LANJUTKAN PEMBAYARAN</button>
+                </form>
             </div>
 
             <!-- Right Column -->
             <div class="col-md-5">
                 <div class="order-box">
-                    <div class="d-flex justify-content-between mb-3">
-                        <span>ORDER ID</span>
-                        <span class="text-orange">W00243480102158</span>
-                    </div>
+                    <?php
+                    $query_tiket = query("SELECT * FROM tiket INNER JOIN rute ON tiket.id_rute=rute.id_rute WHERE id_tiket='$tiket'");
+                    $data_tiket = fetch($query_tiket);
+                    ?>
 
-                    <h5>KEBERANGKATAN</h5>
-                    <p>Bakauheni → Merak</p>
+                    <h5>RINCIAN TIKET</h5>
+                    <p><?= $data_tiket['pelabuhan_asal'] ?> → <?= $data_tiket['pelabuhan_tujuan'] ?></p>
 
                     <h6>Jadwal Masuk Pelabuhan</h6>
-                    <p>Juni 06, 13 December 2024<br>20:00 - 21:00</p>
+                    <p><?= $data_tiket['tanggal'] ?><br><?= $data_tiket['jam'] ?></p>
 
                     <h6>Layanan</h6>
-                    <p>Regular</p>
+                    <p><?= $data_tiket['kelas'] ?></p>
 
                     <h6>Jenis Penumpang Jasa</h6>
-                    <p>Pejalan Kaki</p>
+                    <p><?= $data_tiket['jenis_jasa'] ?></p>
 
                 </div>
             </div>
@@ -118,4 +152,5 @@ $bayi = isset($_GET['b']) ? $_GET['b'] : 0;
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
