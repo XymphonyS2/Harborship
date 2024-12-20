@@ -1,11 +1,11 @@
 <?php
+require "./actions/koneksi.php";
 require_once "./actions/c-register.php";
 
 if (!empty($_SESSION['harborship'])) {
     header('location: index.php');
 }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="id">
@@ -16,6 +16,7 @@ if (!empty($_SESSION['harborship'])) {
     <title>Masuk</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="./assets/img/favicon.svg" type="image/svg+xml" />
     <style>
         html,
         body {

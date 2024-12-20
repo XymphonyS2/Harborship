@@ -28,6 +28,7 @@ while ($data_harga_penumpang = fetch($query_harga_penumpang)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ticket Details</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="./assets/img/favicon.svg" type="image/svg+xml" />
     <style>
         .order-box {
             border: 1px solid #dee2e6;

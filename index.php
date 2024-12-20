@@ -32,8 +32,8 @@ if (empty($_SESSION['harborship'])) {
         content="Awwwards are the Website Awards that recognize and promote the talent and effort of the best developers, designers and web agencies in the world." />
     <link rel="canonical" href="https://www.awwwards.com/" />
     <link rel="icon" href="./assets/img/favicon.svg" type="image/svg+xml" />
-    <link rel="mask-icon" href="https://assets.awwwards.com/assets/images/favicon-safari.svg" color="#000000" />
-    <link rel="apple-touch-icon" href="https://www.awwwards.com/apple-touch-icon.png" />
+    <link rel="mask-icon" href="./assets/img/favicon.svg" color="#000000" />
+    <link rel="apple-touch-icon" href="./assets/img/favicon.svg" />
     <link rel="preload" href="https://assets.awwwards.com/assets/fonts/apercu/apercu-light-pro.woff2" as="font"
         crossorigin />
     <link rel="preload" href="https://assets.awwwards.com/assets/fonts/apercu/apercu-regular-pro.woff2" as="font"

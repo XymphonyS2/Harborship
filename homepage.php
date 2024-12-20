@@ -308,7 +308,7 @@
                 <strong>
                   <a rel="nofollow noopener" href="./index.php" class="button button--medium--rounded"
                     style="padding-left: 100px; padding-right: 100px; z-index: auto;">
-                    Cari tiket
+                    Cari Tiket
                   </a>
                 </strong>
               </li>

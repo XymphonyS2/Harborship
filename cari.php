@@ -123,6 +123,7 @@
               <th scope="col">Kelas</th>
               <th scope="col">Jenis</th>
               <th scope="col">Jadwal</th>
+              <th scope="col">Jadwal</th>
               <th scope="col"> </th>
             </tr>
           </thead>

@@ -38,6 +38,7 @@ for ($i = 0; $i < 4; $i++) {
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="icon" href="./assets/img/favicon.svg" type="image/svg+xml" />
     <style>
         .bank-option {
             padding: 15px;

@@ -38,6 +38,7 @@ for ($i = 0; $i < 4; $i++) {
     <title>Transaction Detail</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.css">
+    <link rel="icon" href="./assets/img/favicon.svg" type="image/svg+xml" />
     <style>
         .tahansimpan {
             text-align: center;
