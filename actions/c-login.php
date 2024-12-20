@@ -14,14 +14,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Verifikasi password
         if (password_verify($password, $hashed_password)) {
             $query = query("SELECT * FROM user WHERE email = '$email'");
-            $_SESSION['harborship'] = fetch($query);
             // Set session
-            if (!empty($_SESSION['harborship'])) {
+            if ($query !== false) {
+                $_SESSION['harborship'] = fetch($query);
+                
                 // Redirect ke halaman cari.html setelah login berhasil
                 alert_harbor("success", "Login Berhasil!", "Selamat Datang, " . $_SESSION['harborship']['nama_lengkap']);
                 header("location: index.php");
-            } else {
-                echo 'abcd';
             }
         } else {
             echo "Password salah.";
