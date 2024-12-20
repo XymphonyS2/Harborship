@@ -6,104 +6,189 @@
     <title>Informasi Pemesanan</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        .accordion-button:not(.collapsed) {
-            background-color: #fff;
-            color: #000;
-        }
-        .accordion-button:focus {
-            box-shadow: none;
-            border-color: rgba(0,0,0,.125);
-        }
-        .payment-info {
-            background-color: #f8f9fa;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0,0,0,.1);
-        }
-        .info-row {
-            padding: 12px 0;
-            border-bottom: 1px solid #dee2e6;
-        }
-        .info-row:last-child {
-            border-bottom: none;
-        }
-        .payment-method {
+        .bank-option {
+            padding: 15px;
             border: 1px solid #dee2e6;
             border-radius: 8px;
             margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
         }
-        .btn-bayar {
-            background-color: #f1453b;
+        
+        .bank-logo {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+        
+        .payment-section {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .payment-header {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .total-payment {
+            background-color: #1a237e;
+            color: white;
+            padding-top: 10px;
+            padding-bottom: 20px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        .pay-button {
+            background-color: #f44336;
             color: white;
             border: none;
+            border-radius: 8px;
             padding: 12px;
-            border-radius: 8px;
             width: 100%;
-            font-weight: 500;
+            margin-top: 10px;
         }
-        .btn-bayar:hover {
-            background-color: #d63a30;
-        }
-        .total-section {
-            background-color: #0a1e3b;
-            color: white;
-            padding: 20px;
+
+        .payment-method-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background-color: #f8f9fa;
             border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .chevron {
+            transition: transform 0.3s ease;
+        }
+
+        .chevron.expanded {
+            transform: rotate(180deg);
         }
     </style>
 </head>
 <body class="bg-light">
-    <div class="container py-4">
-        <div class="payment-info p-3 mb-4">
+    <div class="container mb-5 pb-5">
+        <div class="payment-section mt-4">
             <h5 class="mb-4">Informasi Pemesanan</h5>
-            <div class="info-row d-flex justify-content-between">
+            
+            <div class="payment-header">
                 <span>Nomor Transaksi</span>
-                <span class="fw-semibold">W00243480136403</span>
+                <span>W00243550077704</span>
             </div>
-            <div class="info-row d-flex justify-content-between">
-                <span>Nama Merchant</span>
-                <span class="fw-semibold">ASDP Bakauheni</span>
-            </div>
-            <div class="info-row d-flex justify-content-between">
+            
+            <div class="payment-header">
                 <span>Nominal Transaksi</span>
-                <span class="fw-semibold">Rp 22.700</span>
+                <span>Rp 84.800</span>
             </div>
-            <div class="info-row d-flex justify-content-between align-items-center">
-                <span>Informasi Tambahan</span>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-        </div>
 
-        <div class="payment-methods mb-4">
-            <h5 class="mb-3">Pilih Metode Pembayaran</h5>
-            <div class="accordion" id="paymentAccordion">
-
-
-                <div class="payment-method">
-                    <div class="accordion-item border-0">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#virtualAccount">
-                                Virtual Akun Bank (Transfer)
-                            </button>
-                        </h2>
-                        <div id="virtualAccount" class="accordion-collapse collapse" data-bs-parent="#paymentAccordion">
-                            <div class="accordion-body">
-                                <!-- Content for virtual account -->
-                            </div>
-                        </div>
-                    </div>
+            <div class="mt-3">
+                <div class="d-flex justify-content-between align-items-center" style="cursor: pointer;" onclick="toggleInfo()">
+                    <!-- <span>Informasi Tambahan</span> -->
+                    <!-- <i class="chevron">▼</i> -->
                 </div>
             </div>
         </div>
 
-        <div class="total-section">
-            <div class="d-flex justify-content-between align-items-center mb-3">
-                <span>Total Pembayaran</span>
-                <span class="fw-bold">Rp 22.700</span>
+        <div class="payment-section">
+            <h5 class="mb-4">Pilih Metode Pembayaran</h5>
+
+
+            <div class="payment-method-header" onclick="toggleVirtualAccount()">
+                <span>Virtual Akun Bank (Transfer)</span>
+                <i class="chevron">▼</i>
             </div>
-            <button class="btn-bayar">BAYAR</button>
+
+            <div id="virtualAccountOptions" style="display: none;">
+                <div class="bank-option">
+                    <div class="d-flex align-items-center">
+                        <!-- <img src="/api/placeholder/24/24" alt="BCA" class="bank-logo"> -->
+                        <span>BCA</span>
+                    </div>
+                    <input type="radio" name="bank" value="bca">
+                </div>
+
+                <div class="bank-option">
+                    <div class="d-flex align-items-center">
+                        <!-- <img src="/api/placeholder/24/24" alt="Bank Sumsel Babel" class="bank-logo"> -->
+                        <span>BRI</span>
+                    </div>
+                    <input type="radio" name="bank" value="bri">
+                </div>
+
+                <div class="bank-option">
+                    <div class="d-flex align-items-center">
+                        <!-- <img src="/api/placeholder/24/24" alt="Permata" class="bank-logo"> -->
+                        <span>BNI</span>
+                    </div>
+                    <input type="radio" name="bank" value="bni">
+                </div>
+
+                <div class="bank-option">
+                    <div class="d-flex align-items-center">
+                        <!-- <img src="/api/placeholder/24/24" alt="Muamalat" class="bank-logo"> -->
+                        <span>Mandiri</span>
+                    </div>
+                    <input type="radio" name="bank" value="mandiri">
+                </div>
+            </div>
         </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <div class="total-payment">
+        <div class="container">
+            <div class=" align-items-center">
+                <button class="pay-button">BAYAR</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleInfo() {
+            // Add implementation for toggling additional information
+        }
+
+        function toggleModernChannel() {
+            const chevron = event.currentTarget.querySelector('.chevron');
+            chevron.classList.toggle('expanded');
+        }
+
+        function toggleVirtualAccount() {
+            const options = document.getElementById('virtualAccountOptions');
+            const chevron = event.currentTarget.querySelector('.chevron');
+            
+            if (options.style.display === 'none') {
+                options.style.display = 'block';
+                chevron.classList.add('expanded');
+            } else {
+                options.style.display = 'none';
+                chevron.classList.remove('expanded');
+            }
+        }
+
+        document.querySelectorAll('.bank-option').forEach(option => {
+            option.addEventListener('click', function() {
+                // Uncheck all radio buttons
+                document.querySelectorAll('input[name="bank"]').forEach(radio => {
+                    radio.checked = false;
+                });
+                
+                // Check the clicked option's radio button
+                const radio = this.querySelector('input[type="radio"]');
+                radio.checked = true;
+            });
+        });
+    </script>
 </body>
 </html>

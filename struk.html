@@ -5,6 +5,52 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Transaction Detail</title>
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    .tahansimpan {
+        text-align: center;
+        padding: 20px 0;
+        margin: 15px 0;
+        cursor: pointer;
+        position: relative;
+    }
+    
+    .tahansimpan p {
+        font-size: 24px;
+        font-weight: bold;
+        margin: 0;
+        color: #333;
+    }
+
+    .tahansimpan:hover {
+        background-color: #f8f9fa;
+    }
+
+    .copy-tooltip {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        display: none;
+        z-index: 1000;
+    }
+
+    /* Animation for tooltip */
+    @keyframes fadeInOut {
+        0% { opacity: 0; }
+        10% { opacity: 1; }
+        90% { opacity: 1; }
+        100% { opacity: 0; }
+    }
+
+    .show-tooltip {
+        display: block;
+        animation: fadeInOut 2s ease-in-out forwards;
+    }
+</style>
 </head>
 <body>
 <div class="container mt-5">
@@ -21,7 +67,20 @@
                     <li class="list-group-item">Biaya Layanan: <span class="float-right">Rp 2.069</span></li>
                     <li class="list-group-item">
                         <p>Kode Virtual Akun berlaku sampai <span class="float-right">2024-12-13 14:09</span></p>
-                        <p>Kode Virtual Akun: <span class="float-right">20216002737274402</span></p>
+                        <!-- <p>Kode Virtual Akun: <span class="float-right">20216002737274402</span></p> -->
+                        <p>Kode Virtual Akun: </p>
+                        <div class="container">
+                            <div class="tahansimpan" onclick="copyToClipboard()">
+                                <p>20216002737274402</p>
+                            </div>
+                        </div>
+                    
+                        <div class="copy-tooltip" id="copyTooltip">
+                            Kode sudah disalin
+                        </div>
+                        <!-- <div class="tahansimpan">
+                            <p>20216002737274402</p>
+                        </div> -->
                         <p class="text-muted small">Mohon lakukan pembayaran dengan Kode Virtual diatas sebelum masa berakhir nomor tersebut.</p>
                     </li>
                 </ul>
@@ -29,6 +88,33 @@
         </div>
     </div>
 </div>
+<script>
+    function copyToClipboard() {
+        // Get the text content
+        const text = document.querySelector('.tahansimpan p').textContent;
+        
+        // Create a temporary textarea element
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        document.body.appendChild(textarea);
+        
+        // Select and copy the text
+        textarea.select();
+        document.execCommand('copy');
+        
+        // Remove the temporary textarea
+        document.body.removeChild(textarea);
+        
+        // Show the tooltip
+        const tooltip = document.getElementById('copyTooltip');
+        tooltip.classList.add('show-tooltip');
+        
+        // Remove the tooltip after animation
+        setTimeout(() => {
+            tooltip.classList.remove('show-tooltip');
+        }, 2000);
+    }
+</script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
