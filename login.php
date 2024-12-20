@@ -1,5 +1,6 @@
 <?php
-require_once "./actions/c-login.php";
+require "./actions/koneksi.php";
+require "./actions/c-login.php";
 
 if (!empty($_SESSION['harborship'])) {
     header('location: index.php');
@@ -67,7 +68,7 @@ if (!empty($_SESSION['harborship'])) {
     </style>
 </head>
 
-<body">
+<body>
     <div class="bg-light">
         <div class="d-flex flex-column align-items-center w-100 mx-auto p-4 justify-content-center mt-4" style="background: white;">
             <img src="./assets/img/ProyekBaru.svg" alt="logo" style="max-width: 200px; width: 100%;" />
@@ -115,16 +116,18 @@ if (!empty($_SESSION['harborship'])) {
         ?>
             <script>
                 swal({
-                    type: "<?= $_SESSION['sweet_harbor']['trigger'] ?>",
-                    title: "<?= $_SESSION['sweet_harbor']['title'] ?>",
-                    text: "<?= $_SESSION['sweet_harbor']['text'] ?>",
+                    type: "<?= $_SESSION['sweet_harbor_login']['trigger'] ?>",
+                    title: "<?= $_SESSION['sweet_harbor_login']['title'] ?>",
+                    text: "<?= $_SESSION['sweet_harbor_login']['text'] ?>",
                     confirmButtonText: "Okay"
                 });
             </script>
         <?php
-            unset($_SESSION['sweet_harbor']);
+        
+            unset($_SESSION['sweet_harbor_login']);
         }
         ?>
-        </body>
+    </div>
+</body>
 
 </html>

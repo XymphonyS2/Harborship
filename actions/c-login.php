@@ -1,6 +1,4 @@
 <?php
-require 'koneksi.php';
-
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -17,10 +15,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // Set session
             if ($query !== false) {
                 $_SESSION['harborship'] = fetch($query);
-                
                 // Redirect ke halaman cari.html setelah login berhasil
                 alert_harbor("success", "Login Berhasil!", "Selamat Datang, " . $_SESSION['harborship']['nama_lengkap']);
-                header("location: index.php");
+                header("location: login.php");
             }
         } else {
             echo "Password salah.";

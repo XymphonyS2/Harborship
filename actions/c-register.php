@@ -1,6 +1,4 @@
 <?php
-require 'koneksi.php';
-
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nama_lengkap = $_POST['nama_lengkap'];
     $kelamin = $_POST['kelamin'];
@@ -32,7 +30,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $query = query("INSERT INTO user (nama_lengkap, kelamin, tanggal_lahir, nik, nomor_telepon, kota_asal, email, password) VALUES ('$nama_lengkap', '$kelamin', '$tanggal_lahir', '$nik', '$nomor_telepon', '$kota_asal', '$email', '$hashed_password')");
 
     if ($query !== false) {
-        alert_harbor("success", "Registrasi Berhasil!", "");
+        $_SESSION['sweet_harbor_login']['trigger'] = "success";
+        $_SESSION['sweet_harbor_login']['title'] = "Register Berhasil";
+        $_SESSION['sweet_harbor_login']['text'] = "";
         header("Location: login.php");
     } else {
         alert_harbor("success", "Registrasi Gagal!", "");

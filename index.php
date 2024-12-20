@@ -1,6 +1,8 @@
 <?php
+require './actions/koneksi.php';
+
 $page = empty($_GET['page']) ? "cari" : $_GET['page'];
-require_once "./actions/c-" . $page . ".php";
+require "./actions/c-" . $page . ".php";
 
 if (empty($_SESSION['harborship'])) {
     header('location: login.php');
@@ -17,7 +19,7 @@ if (empty($_SESSION['harborship'])) {
     <title>Harborship</title>
     <meta name="keywords" content="Website Awards, Web Design Inspiration, Webdesign Trends" />
     <meta property="og:site_name" content="Awwwards" />
-    <meta property="og:image" content="https://assets.awwwards.com/assets/images/pages/about-certificates/awwwards.jpg" />
+    <!-- <meta property="og:image" content="https://assets.awwwards.com/assets/images/pages/about-certificates/awwwards.jpg" /> -->
     <meta property="og:title" content="Awwwards - Website Awards - Best Web Design Trends" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.awwwards.com/" />
@@ -39,7 +41,7 @@ if (empty($_SESSION['harborship'])) {
     <link rel="stylesheet" href="./assets/css/port.css" />
     <link rel="stylesheet" href="./assets/css/syarat/syarat.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" media="screen" href="https://assets.awwwards.com/assets/redesign/css/home.css?v=1.99" />
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="https://assets.awwwards.com/assets/redesign/css/home.css?v=1.99" /> -->
     <link rel="stylesheet" type="text/css" href="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.css">
 </head>
 
@@ -69,7 +71,7 @@ if (empty($_SESSION['harborship'])) {
 
         <section id="content" style="padding-bottom: -20%;">
             <div class="anchor-section" id="sotd">
-                <div class="content-header" style="padding-bottom: 5px"><?= $_SESSION['sweet_harbor']['trigger'] ?></div>
+                <div class="content-header" style="padding-bottom: 5px"></div>
             </div>
 
             <?php
@@ -121,7 +123,7 @@ if (empty($_SESSION['harborship'])) {
                             <div class="box-featured__content">
                                 Get It On
                                 <svg class="ico-svg box-featured__m" viewbox="0 0 20 20" width="20">
-                                    <use xlink:href="https://www.awwwards.com/assets/redesign/images/sprite-icons.svg?v=11-2024#calendar">
+                                    <!-- <use xlink:href="https://www.awwwards.com/assets/redesign/images/sprite-icons.svg?v=11-2024#calendar"> -->
                                     </use>
                                 </svg>
 
@@ -153,7 +155,7 @@ if (empty($_SESSION['harborship'])) {
                 });
             </script>
         <?php
-            // unset($_SESSION['sweet_harbor']);
+            unset($_SESSION['sweet_harbor']);
         }
         ?>
 </body>
