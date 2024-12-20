@@ -70,19 +70,19 @@
       <div class="row mb-4">
         <div class="col-md-3 mb-3">
           <label class="form-label">Jumlah Lansia</label>
-          <input type="number" name="lansia" class="form-control" value="0" min="0">
+          <input type="number" name="lansia" class="form-control" value="0" min="0" required>
         </div>
         <div class="col-md-3 mb-3">
           <label class="form-label">Jumlah Dewasa</label>
-          <input type="number" name="dewasa" class="form-control" value="0" min="0">
+          <input type="number" name="dewasa" class="form-control" value="0" min="0" required>
         </div>
         <div class="col-md-3 mb-3">
           <label class="form-label">Jumlah Anak</label>
-          <input type="number" name="anak" class="form-control" value="0" min="0">
+          <input type="number" name="anak" class="form-control" value="0" min="0" required>
         </div>
         <div class="col-md-3 mb-3">
           <label class="form-label">Jumlah Bayi</label>
-          <input type="number" name="bayi" class="form-control" value="0" min="0">
+          <input type="number" name="bayi" class="form-control" value="0" min="0" required>
         </div>
       </div>
 
@@ -117,26 +117,13 @@
         <table class="table table-striped mb-0">
           <thead>
             <tr>
-              <th scope="col" rowspan="1">No</th>
-              <th scope="col" rowspan="1">Pelabuhan Asal</th>
-              <th scope="col" rowspan="1">Pelabuhan Tujuan</th>
-              <th scope="col" rowspan="1">Kelas</th>
-              <th scope="col" rowspan="1">Jenis</th>
-              <th scope="col" rowspan="1">Jadwal</th>
-              <th scope="col" colspan="4" class="text-center">Jumlah Penumpang</th>
-              <th scope="col" rowspan="1"> </th>
-            </tr>
-            <tr>
-              <th></th>
-              <th></th>
-              <th></th>
-              <th></th>
-              <th></th>
-              <th></th>
-              <th scope="col">Lansia</th>
-              <th scope="col">Dewasa</th>
-              <th scope="col">Anak</th>
-              <th scope="col">Bayi</th>
+              <th scope="col">No</th>
+              <th scope="col">Pelabuhan Asal</th>
+              <th scope="col">Pelabuhan Tujuan</th>
+              <th scope="col">Kelas</th>
+              <th scope="col">Jenis</th>
+              <th scope="col">Jadwal</th>
+              <th scope="col"> </th>
             </tr>
           </thead>
           <tbody>
@@ -151,11 +138,16 @@
                 <td><?= $data_cari_tiket['kelas'] ?></td>
                 <td><?= $data_cari_tiket['jenis_jasa'] ?></td>
                 <td><?= $data_cari_tiket['tanggal'] ?> <?= $data_cari_tiket['jam'] ?></td>
-                <td>1</td>
-                <td>2</td>
-                <td>1</td>
-                <td>0</td>
-                <td><button class="btn btn-primary">Pilih</button></td>
+                <td>
+                  <form method="post">
+                    <input type="hidden" name="id_tiket" value="<?= $data_cari_tiket['id_tiket'] ?>">
+                    <input type="hidden" name="lansia" value="<?= intval($_POST['lansia']) ?>">
+                    <input type="hidden" name="dewasa" value="<?= intval($_POST['dewasa']) ?>">
+                    <input type="hidden" name="anak" value="<?= intval($_POST['anak']) ?>">
+                    <input type="hidden" name="bayi" value="<?= intval($_POST['bayi']) ?>">
+                    <button name="tiket" class="btn btn-primary">Pilih</button>
+                  </form>
+                </td>
               </tr>
           <?php
             }

@@ -2,7 +2,10 @@
 require './actions/koneksi.php';
 
 $page = empty($_GET['page']) ? "cari" : $_GET['page'];
-require "./actions/c-" . $page . ".php";
+if (file_exists("./actions/c-" . $page . ".php")) {
+    require "./actions/c-" . $page . ".php";
+}
+
 
 if (empty($_SESSION['harborship'])) {
     header('location: login.php');
