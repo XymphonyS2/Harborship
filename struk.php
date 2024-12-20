@@ -1,6 +1,6 @@
 <?php
 require './actions/koneksi.php';
-require './actions/c-pembayaran.php';
+require './actions/c-struk.php';
 
 $tiket = isset($_GET['t']) ? intval($_GET['t']) : 0;
 $jumlah[1][0] = isset($_GET['l']) ? intval($_GET['l']) : 0;
@@ -132,7 +132,14 @@ for ($i = 0; $i < 4; $i++) {
                             <p>20216002737274402</p>
                         </div> -->
                             <p class="text-muted small">Mohon lakukan pembayaran dengan Kode Virtual diatas sebelum masa berakhir nomor tersebut.</p>
-                            <a href="index.php?page=profile" style="float: right;">Kembali</a>
+                            <form method="POST">
+                                <input type="hidden" name="id_tiket" value="<?= $tiket ?>">
+                                <input type="hidden" name="lansia" value="<?= $jumlah[1][0] ?>">
+                                <input type="hidden" name="dewasa" value="<?= $jumlah[1][1] ?>">
+                                <input type="hidden" name="anak" value="<?= $jumlah[1][2] ?>">
+                                <input type="hidden" name="bayi" value="<?= $jumlah[1][3] ?>">
+                                <button type="submit" style="float: right; border: none; background-color: white; text-decoration: underline; color: blue;">Kembali</button>
+                            </form>
                         </li>
                     </ul>
                 </div>

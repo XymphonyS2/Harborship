@@ -114,14 +114,7 @@ while ($data_harga_penumpang = fetch($query_harga_penumpang)) {
                     </ul>
                 </div>
                 <a class="btn btn-primary w-100 mt-3" href="./index.php" style="margin-bottom: 5px;">CARI JADWAL LAIN</a>
-                <form method="POST">
-                    <input type="hidden" name="id_tiket" value="<?= $tiket ?>">
-                    <input type="hidden" name="lansia" value="<?= $jumlah[1][0] ?>">
-                    <input type="hidden" name="dewasa" value="<?= $jumlah[1][1] ?>">
-                    <input type="hidden" name="anak" value="<?= $jumlah[1][2] ?>">
-                    <input type="hidden" name="bayi" value="<?= $jumlah[1][3] ?>">
                     <a class="btn btn-primary w-100 mt-3" href="./pembayaran.php?l=<?= $jumlah[1][0] ?>&d=<?= $jumlah[1][1] ?>&a=<?= $jumlah[1][2] ?>&b=<?= $jumlah[1][3] ?>&t=<?= $tiket ?>" style="margin-bottom: 25px;">LANJUTKAN PEMBAYARAN</a>
-                </form>
             </div>
 
             <!-- Right Column -->

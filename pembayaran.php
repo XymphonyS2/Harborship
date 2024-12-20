@@ -1,6 +1,5 @@
 <?php
 require './actions/koneksi.php';
-require './actions/c-pembayaran.php';
 
 $tiket = isset($_GET['t']) ? intval($_GET['t']) : 0;
 $jumlah[1][0] = isset($_GET['l']) ? intval($_GET['l']) : 0;
@@ -38,6 +37,7 @@ for ($i = 0; $i < 4; $i++) {
     <title>Informasi Pemesanan</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <style>
         .bank-option {
             padding: 15px;
@@ -178,6 +178,9 @@ for ($i = 0; $i < 4; $i++) {
                 </div>
             </div>
         </div>
+                <a href="javascript:history.back()" class="btn btn-outline-danger" aria-label="Back" style="margin-right: 20px;">
+                    <i class="bi bi-arrow-left"></i> Back
+                </a>
     </div>
 
     <div class="total-payment">

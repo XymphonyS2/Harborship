@@ -62,12 +62,12 @@ if (empty($_SESSION['harborship'])) {
                                 style="width: 10%; height: 10%; margin-top: -50px;">
                                 <img src="./assets/img/ProyekBaru.svg" alt="logo">
                             </a>
-                            <a href="javascript:history.back()" class="btn btn-outline-secondary" aria-label="Back" style="margin-right: 20px;">
+                            <!-- <a href="javascript:history.back()" class="btn btn-outline-secondary" aria-label="Back" style="margin-right: 20px;">
                                 <i class="bi bi-arrow-left"></i>
                             </a>
                             <a href="javascript:history.forward()" class="btn btn-outline-secondary" aria-label="Back" style="margin-right: 20px;">
                                 <i class="bi bi-arrow-right"></i>
-                            </a>
+                            </a> -->
                             <div class="header-main__right text-end">
                                 <div class="header-main__user">
                                     <div class="dropdown">
@@ -134,10 +134,10 @@ if (empty($_SESSION['harborship'])) {
                             </ul>
                             <ul class="footer__menu">
                                 <li><span rel="nofollow">Dukungan</span></li>
-                                <li><a style="font-weight: lighter;" href="tel:(021) 191" target="_blank">Syarat & Ketentuan</a></li>
-                                <li><a style="font-weight: lighter;" href="https://wa.me/+6282181512200" target="_blank">Kebijakan
+                                <li><a style="font-weight: lighter;" href="?page=syarat" target="_blank">Syarat & Ketentuan</a></li>
+                                <li><a style="font-weight: lighter;" href="?page=syarat" target="_blank">Kebijakan
                                         Privasi</a></li>
-                                <li><a style="font-weight: lighter;" href="./golkendaraan.html">Golongan Kendaraan</a></li>
+                                <li><a style="font-weight: lighter;" href="?page=golkendaraan" target="_blank">Golongan Kendaraan</a></li>
                             </ul>
                         </div>
                         <div class="box-featured" style="margin-right: 3%;">

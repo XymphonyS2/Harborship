@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 18, 2024 at 04:58 PM
+-- Generation Time: Dec 20, 2024 at 05:57 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -52,8 +52,31 @@ CREATE TABLE `golongan_kendaraan` (
 --
 
 INSERT INTO `golongan_kendaraan` (`id_golongan_kendaraan`, `kategori`, `harga`) VALUES
-(1, 'motor', 50000),
-(2, 'mobil', 150000);
+(1, 'Motor', 50000),
+(2, 'Mobil', 150000),
+(3, 'Truk / Bis', 250000);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `harga_penumpang`
+--
+
+CREATE TABLE `harga_penumpang` (
+  `id_harga_penumpang` int(11) NOT NULL,
+  `jenis_penumpang` varchar(20) DEFAULT NULL,
+  `harga_penumpang` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `harga_penumpang`
+--
+
+INSERT INTO `harga_penumpang` (`id_harga_penumpang`, `jenis_penumpang`, `harga_penumpang`) VALUES
+(1, 'lansia', 30000),
+(2, 'dewasa', 35000),
+(3, 'anak', 25000),
+(4, 'bayi', 15000);
 
 -- --------------------------------------------------------
 
@@ -77,7 +100,9 @@ CREATE TABLE `penumpang` (
 --
 
 INSERT INTO `penumpang` (`id_penumpang`, `id_tiket`, `id_user`, `id_golongan_kendaraan`, `lansia`, `dewasa`, `anak`, `bayi`) VALUES
-(1, NULL, NULL, NULL, 0, 2, 1, 1);
+(2, 2, 5, NULL, 0, 2, 0, 0),
+(3, 2, 2, NULL, 0, 9, 0, 0),
+(6, 2, 2, NULL, 1, 0, 0, 10);
 
 -- --------------------------------------------------------
 
@@ -124,7 +149,10 @@ CREATE TABLE `tiket` (
 --
 
 INSERT INTO `tiket` (`id_tiket`, `id_rute`, `kelas`, `jenis_jasa`, `tanggal`, `jam`, `harga`) VALUES
-(2, NULL, 'express', 'kendaraan', '2024-12-04', '00:00:07', 400000);
+(2, 7, 'express', 'kendaraan', '2024-12-04', '00:00:07', 400000),
+(4, 9, 'reguler', 'pejalan_kaki', '2024-07-12', '21:55:40', 300000),
+(5, 10, 'express', 'kendaraan', '2024-12-01', '04:56:33', 2000000),
+(6, 8, 'express', 'kendaraan', '2024-10-15', '10:57:01', 1000000);
 
 -- --------------------------------------------------------
 
@@ -151,7 +179,8 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`id_user`, `nama_lengkap`, `kelamin`, `tanggal_lahir`, `nik`, `nomor_telepon`, `kota_asal`, `email`, `password`) VALUES
 (2, 'Muhammad Hafiz Assyifa', 1, '2005-12-30', '0000000000000000', '082100000000', 'Metro', 'hafizassyifa@hotmail.com', '$2y$10$N2uN1WzQ1JqqfJ3Zhj1Rpu3VBfh1szK8EQC7DBPRLJ7Nm9jZcegZq'),
 (4, 'Raed Basheer', 1, '2024-12-13', '0000111100001111', '081300000000', 'Yaman', 'raed@hotmail.com', '$2y$10$aDoJx3/R13gxKH5//ewqcO52cWJxnPDCiOCAAZXhZ2wF0KdCg8z5.'),
-(5, 'Bintang Prastyo Kusumo Wicaksono', 1, '2005-05-14', '1010101010101010', '082177480705', 'Metro', 'bintang@gmail.com', '$2y$10$ADqXs7vbzimNYbp2p8nquu0ubWslRsDHdyoQXP7.domrZsH8kL12e');
+(5, 'Bintang Prastyo Kusumo Wicaksono', 1, '2005-05-14', '1010101010101010', '082177480705', 'Metro', 'bintang@gmail.com', '$2y$10$ADqXs7vbzimNYbp2p8nquu0ubWslRsDHdyoQXP7.domrZsH8kL12e'),
+(6, 'Kanaya Trailingga Pratama', 1, '2005-03-20', '003934203920392', '082177487263', 'way halim', 'kanaya@gmail.com', '$2y$10$SUmQ7KILBMYhgyJSgwt08.xGkfTb1pLg.PZRYPLyT8H4uIr.HKVou');
 
 --
 -- Indexes for dumped tables
@@ -168,6 +197,12 @@ ALTER TABLE `berita`
 --
 ALTER TABLE `golongan_kendaraan`
   ADD PRIMARY KEY (`id_golongan_kendaraan`);
+
+--
+-- Indexes for table `harga_penumpang`
+--
+ALTER TABLE `harga_penumpang`
+  ADD PRIMARY KEY (`id_harga_penumpang`);
 
 --
 -- Indexes for table `penumpang`
@@ -211,13 +246,19 @@ ALTER TABLE `berita`
 -- AUTO_INCREMENT for table `golongan_kendaraan`
 --
 ALTER TABLE `golongan_kendaraan`
-  MODIFY `id_golongan_kendaraan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_golongan_kendaraan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `harga_penumpang`
+--
+ALTER TABLE `harga_penumpang`
+  MODIFY `id_harga_penumpang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `penumpang`
 --
 ALTER TABLE `penumpang`
-  MODIFY `id_penumpang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_penumpang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `rute`
@@ -229,13 +270,13 @@ ALTER TABLE `rute`
 -- AUTO_INCREMENT for table `tiket`
 --
 ALTER TABLE `tiket`
-  MODIFY `id_tiket` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_tiket` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables
